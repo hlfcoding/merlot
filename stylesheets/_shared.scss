@@ -1,0 +1,14 @@
+$mobile-inner-width: 640px;
+$mobile-outer-width: $mobile-inner-width + 1px;
+
+@mixin desktop {
+  @media screen and (min-device-width: $mobile-outer-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media handheld, (screen and (max-device-width: $mobile-inner-width)) {
+    @content;
+  }
+}

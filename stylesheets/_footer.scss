@@ -1,0 +1,146 @@
+@import 'shared';
+
+/* footer */
+
+footer {
+  margin: -94px auto 40px;
+  padding-top: 104px;
+  text-align: center;
+  span.ribbon-outer {
+    border-bottom: 2px solid #bdb6ad;
+    display: block;
+    position: relative;
+  }
+  span.ribbon-inner {
+    background-color: #cd596b;
+    border: { style: solid; color: #7c334f; }
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  p {
+    color: #8b786f;
+    font-family: 'Open Sans', Myriad, Calibri, sans-serif;
+    font-weight: bold;
+  }
+  span.ribbon-inner p {
+    background-color: #7c334f;
+    color: #e69b95;
+    margin: 0;
+  }
+  a {
+    color: #cd596b;
+  }
+  span.ribbon-inner a {
+    color: #7eb0d2;
+    font-family: 'Open Sans', Myriad, Calibri, sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    position: relative;
+    text-transform: uppercase;
+    &:hover {
+      color: #7eb0d2;
+    }
+  }
+  span.left-tail, span.right-tail {
+    display: block;
+    position: absolute;
+    z-index: 0;
+  }
+  span.octocat {
+    background: { color: transparent; position: 0 0; repeat: no-repeat; }    
+    display: block;
+  }
+}
+
+@include desktop {
+
+  footer {
+    background: transparent url(../images/footer-ramp.jpg) center -1px no-repeat;
+    max-width: 560px;
+    span.ribbon-inner {
+      border-width: 2px;
+      padding: 1px;
+      a {
+        bottom: -1px;
+        font-size: 1.2em;
+      }
+    } 
+    p {
+      font-size: .8em;
+    }
+    span.ribbon-inner p {
+      font: bold italic 12px/1 Georgia, Times, “Times New Roman”, serif;
+      padding-bottom: 4px;
+    }
+    span.left-tail, span.right-tail {
+      background: transparent url(../images/small-ribbon-tail-sprite.png) 0 0 no-repeat;
+      bottom: 5px;
+      height: 29px;
+      width: 18px;
+    }
+    span.left-tail {
+      background-position: 0 0;
+      left: -11px;
+    }
+    span.right-tail {
+      background-position: -18px 0;
+      right: -11px;
+    }
+    span.octocat {
+      background-image: url(../images/octocat.png);
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+@include mobile {
+
+  footer {
+    background: none;
+    max-width:640px;
+    span.ribbon-inner {
+      border-width: 8px;
+      padding: 6px;
+    }
+    p {
+      font-size: .6em;
+    }
+    span.ribbon-inner p {
+      font: bold italic 22px/1 Georgia, Times, “Times New Roman”, serif;
+      height: auto;
+      line-height: 1.1;
+      padding: 20px 0px 10px;
+    }
+    span.ribbon-inner a {
+      bottom: 0;
+      display: block;
+      font-size: 38px;
+      padding-bottom: 10px;
+    }
+    span.left-tail, span.right-tail {
+      background: transparent url(../images/small-ribbon-tail-sprite-2x.png) 0 0 no-repeat;
+      height: 126px;
+      top: -126px;
+      width: 23px;
+    }
+    span.left-tail {
+      background-position: 0 0;
+      left: 0;
+    }
+    span.right-tail {
+      background-position: -23px 0;
+      right: 0;
+    }
+    span.octocat {
+      background-image: url(../images/octocat-2x.png);
+      height: 60px;
+      margin: 20px auto 0;
+      width: 60px;
+    }
+  }
+  
+}

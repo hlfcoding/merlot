@@ -1,0 +1,57 @@
+@import '../shared';
+
+/* content-based headers */
+
+#main-content {
+  > .header-level-1:first-child,
+  > .header-level-2:first-child,
+  > .header-level-3:first-child,
+  > .header-level-4:first-child,
+  > .header-level-5:first-child,
+  > .header-level-6:first-child {
+    margin-top: 0;
+  }
+}
+
+.header-level-1 {
+  border-bottom: .2em double #d3ccc1;
+  color: #7c334f;
+  font-size: 1.85em;
+  font-style: italic;
+  line-height: 1.2;
+  margin: 1.1em 0 .38em;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.header-level-2 {
+  border-bottom: .1em solid #D3CCC1;
+  color: #7c334f;
+  font-size: 1.58em;
+  line-height: 1.2;
+  margin: .95em 0 .5em;
+  padding-bottom: 10px
+}
+
+.header-level-3 {
+  font-size: 1.45em;
+  margin: 20px 0 10px;
+}
+
+.header-level-4 {
+  color: #cd596b;
+  font-size: 1.2em;
+  margin: .6em 0;
+}
+
+.header-level-5 {
+  color: #8b786f;
+  font-size: 1em;
+  margin: .7em 0;
+}
+
+.header-level-6 {
+  font-size: .85em;
+  font-style: italic;
+  margin: .8em 0;
+}
