@@ -3,9 +3,9 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="stylesheets/main.css" media="all"/>
+    <link rel="stylesheet" href="stylesheets/main.css" media="all">
 
     <script type="text/javascript" src="javascripts/modernizr.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -42,10 +42,81 @@
       <span class="banner-fix"></span>
 
       <section id="main_content">
-        <h3>Welcome to the Merlot</h3>
-        <p>We both know that you're pretty awesome. Why not have a fancy site for your code? You = Awesome. Your code = Awesome. So much awesome in one place.</p>
+
+        <h2>Welcome to the Merlot</h2>
+
+        <h4>Introduction</h4>
+
+        <p>We <em>both</em> know that you're pretty <strong>awesome</strong>. Why not have a fancy site for your code? <code>You = Awesome</code>. <code>Your code = Awesome</code>. So much awesome in one place.</p>
 
         <p>Use this repo to build your own page, or generate one with <a href="http://pages.github.com">GitHub Pages</a>.</p>
+
+        <hr>
+
+        <h3>Text Blocks</h3>
+
+        <blockquote>This is a block quote. We both know that you're pretty awesome. Why not have a fancy site for your code? You = Awesome. Your code = Awesome. So much awesome in one place.</blockquote>
+
+<pre>This is a preformatted block. We both know that you're pretty awesome.
+Why not have a fancy site for your code? You = Awesome. Your code =
+Awesome. So much awesome in one place.</pre>
+
+        <h5>HighlightJS Support</h5>
+
+<pre><code class="lang-js">$(<span class="hljs-string">'.avatars'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'img[alt]'</span>).tip(); <span class="hljs-comment">// Tips will follow cursor.</span>
+$(<span class="hljs-string">'nav.bar'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'a[title]'</span>).snapTip({
+  snap: { toXAxis: <span class="hljs-keyword">true</span> } <span class="hljs-comment">// Tips will only follow along x axis.</span>
+});
+$(<span class="hljs-string">'article'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'a[title]'</span>).snapTip() <span class="hljs-comment">// Tip will not follow.</span>
+</code></pre>
+
+        <h3>Lists</h3>
+
+        <h5>Unordered</h5>
+        <ul>
+          <li>Apple: We both know that you're pretty awesome.</li>
+          <li>Banana: We both know that you're pretty awesome.</li>
+          <li>Cherry: We both know that you're pretty awesome.</li>
+        </ul>
+
+        <h5>Ordered</h5>
+        <ol>
+          <li>Apple: We both know that you're pretty awesome.</li>
+          <li>Banana: We both know that you're pretty awesome.</li>
+          <li>Cherry: We both know that you're pretty awesome.</li>
+        </ol>
+
+        <h5>Definitions</h5>
+        <dl>
+          <dt>Red</dt>
+            <dd>Apple: We both know that you're pretty awesome.</dd>
+            <dd>Cherry: We both know that you're pretty awesome.</dd>
+          <dt>Yellow</dt>
+            <dd>Banana: We both know that you're pretty awesome.</dd>
+        </dl>
+
+        <h3>Tables</h3>
+
+        <table>
+          <thead>
+            <tr><th>Thing</th><th>Color</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Apple</td><td>Red</td></tr>
+            <tr><td>Banana</td><td>Yellow</td></tr>
+            <tr><td>Cherry</td><td>Red</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th>Winner</th><td>Apple</td></tr>
+          </tfoot>
+        </table>
+
+        <hr>
+
+        <h6>A Small Conclusion</h6>
+
+        <p><small>Use this repo to build your own page, or generate one with <a href="http://pages.github.com">GitHub Pages</a>.</small></p>
+
       </section>
 
       <footer>
