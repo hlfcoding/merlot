@@ -1,0 +1,43 @@
+@import 'shared';
+
+/* wrapper */
+
+div.shell {
+  display: block;
+  margin: 0 auto;
+}
+
+a#forkme_banner {
+  background: transparent url(../images/fork-sprite.png) 0 0 no-repeat;
+  display: block;
+  height: 138px;
+  left: 0;
+  position: absolute;
+  text-indent: -9000px;
+  top: 0;
+  width: 138px;
+  z-index: 3;
+  &:hover {
+    background-position: 0 -138px;
+  }
+}
+
+@include desktop {
+
+  div.shell {
+    width: $full-wrapper-width;
+  }
+
+}
+
+@include mobile {
+
+  div.shell {
+    width: $mobile-wrapper-width;
+  }
+
+  a#forkme_banner {
+    display: none;
+  }
+
+}

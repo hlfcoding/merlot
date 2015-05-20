@@ -1,14 +1,16 @@
+@import 'shared';
+
 * {
   background: none !important;
   color: #333 !important;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  color: #7c334f !important;
+h1, h2, h3, h4, h5, h6 {
+  color: $accent-color-1 !important;
 }
 
 a {
-  color: #417090 !important;
+  color: $accent-color-2 !important;
 }
 
 #main_content > .header-level-1:first-child,
@@ -23,10 +25,8 @@ a {
 #forkme_banner,
 #downloads,
 .left-tail,
-.right-tail
-{
-display: none !important;
-
+.right-tail {
+  display: none !important;
 }
 
 .ribbon-inner,.ribbon-outer {
