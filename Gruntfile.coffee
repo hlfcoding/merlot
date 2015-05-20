@@ -10,7 +10,9 @@ module.exports = (grunt) ->
         browsers: ['last 2 versions', 'ie >= 9']
         cascade: yes
         map: yes
-      src: 'stylesheets/main.css'
+      stylesheets:
+        src: 'stylesheets/main.css'
+        dest: 'stylesheets/main.css'
 
     sass:
       stylesheets:
