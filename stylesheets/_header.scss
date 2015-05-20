@@ -6,8 +6,8 @@ header {
   position: relative;
   z-index: 2;
   span.ribbon-inner {
-    background-color: #cd596b;
-    border: { style: solid; color: #7c334f; }
+    background-color: $accent-color-1-light-1;
+    border: { style: solid; color: $accent-color-1; }
     display: block;
     position: relative;
     z-index: 1;
@@ -19,17 +19,17 @@ header {
     z-index: 0;
   }
   h1 {
-    background-color: #7c334f;
-    color: #ece4d8;
+    background-color: $accent-color-1;
+    color: $canvas-color;
     font: { style: normal; weight: bolder; }
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
   }
   h2 {
-    background-color: #7c334f;
-    color: #e69b95;
-    font: bold italic .85em/1.5 Georgia, Times, “Times New Roman”, serif;
+    background-color: $accent-color-1;
+    color: $accent-color-1-light-2;
+    font: bold italic .85em/1.5 #{$font-family-2};
     margin-top: -3px;
     padding-bottom: 14px;
     text-align: center;
@@ -45,9 +45,7 @@ section#downloads {
     background: transparent url(../images/download-sprite.png) 0 0 no-repeat;
     color: #fff;
     display: block;
-    font-family: 'Open Sans', Myriad, Calibri, sans-serif;
-    font-size: 1.3em;
-    font-weight: 800;
+    font: { family: #{$font-family-1}; size: 1.3em; weight: bolder; }
     height: 67px;
     line-height: 1;
     padding-top: 130px;
@@ -58,9 +56,9 @@ section#downloads {
       text-decoration: none;
     }
     em {
-      color: #83b7da;
+      color: $accent-color-2-light-3;
       display: block;
-      font: bold italic 12px/1 Georgia, Times, “Times New Roman”, serif;
+      font: bold italic 12px/1 #{$font-family-2};
     }
     &.zip {
       float: left;
@@ -143,7 +141,7 @@ section#main_content {
 
   header {
     margin: 0;
-    max-width: 640px;
+    max-width: $mobile-wrapper-width;
     top: 51px;
     span.ribbon-inner {
       border-width: 8px;
@@ -183,7 +181,7 @@ section#main_content {
     background: transparent url(../images/shield-fallback.png) center top no-repeat;
     height: 31px;
     top: 20px;
-    width: 640px;
+    width: $mobile-wrapper-width;
   }
 
   section#main_content {

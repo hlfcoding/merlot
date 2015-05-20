@@ -7,39 +7,36 @@ footer {
   padding-top: 104px;
   text-align: center;
   span.ribbon-outer {
-    border-bottom: 2px solid #bdb6ad;
+    border-bottom: 2px solid $canvas-color-dark-1;
     display: block;
     position: relative;
   }
   span.ribbon-inner {
-    background-color: #cd596b;
-    border: { style: solid; color: #7c334f; }
+    background-color: $accent-color-1-light-1;
+    border: { style: solid; color: $accent-color-1; }
     display: block;
     position: relative;
     z-index: 1;
   }
   p {
-    color: #8b786f;
-    font-family: 'Open Sans', Myriad, Calibri, sans-serif;
-    font-weight: bold;
+    color: $accent-color-2-light-2;
+    font: { family: $font-family-1; weight: bold; }
   }
   span.ribbon-inner p {
-    background-color: #7c334f;
-    color: #e69b95;
+    background-color: $accent-color-1;
+    color: $accent-color-1-light-2;
     margin: 0;
   }
   a {
-    color: #cd596b;
+    color: $accent-color-1-light-1;
   }
   span.ribbon-inner a {
-    color: #7eb0d2;
-    font-family: 'Open Sans', Myriad, Calibri, sans-serif;
-    font-style: normal;
-    font-weight: bolder;
+    color: $accent-color-2-light-1;
+    font: { family: $font-family-1; style: normal; weight: bolder; }
     position: relative;
     text-transform: uppercase;
     &:hover {
-      color: #7eb0d2;
+      color: $accent-color-2-light-1;
     }
   }
   span.left-tail, span.right-tail {
@@ -70,7 +67,7 @@ footer {
       font-size: .8em;
     }
     span.ribbon-inner p {
-      font: bold italic 12px/1 Georgia, Times, “Times New Roman”, serif;
+      font: bold italic 12px/1 #{$font-family-2};
       padding-bottom: 4px;
     }
     span.left-tail, span.right-tail {
@@ -101,7 +98,7 @@ footer {
 
   footer {
     background: none;
-    max-width:640px;
+    max-width: $mobile-wrapper-width;
     span.ribbon-inner {
       border-width: 8px;
       padding: 6px;
@@ -110,7 +107,7 @@ footer {
       font-size: .6em;
     }
     span.ribbon-inner p {
-      font: bold italic 22px/1 Georgia, Times, “Times New Roman”, serif;
+      font: bold italic 22px/1 #{$font-family-2};
       height: auto;
       line-height: 1.1;
       padding: 20px 0px 10px;

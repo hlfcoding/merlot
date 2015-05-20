@@ -14,10 +14,9 @@
 }
 
 .header-level-1 {
-  border-bottom: .2em double #d3ccc1;
-  color: #7c334f;
-  font-size: 1.85em;
-  font-style: italic;
+  border-bottom: .2em double $canvas-color-dark-0;
+  color: $accent-color-1;
+  font: { size: 1.85em; style: italic; }
   line-height: 1.2;
   margin: 1.1em 0 .38em;
   padding-bottom: 10px;
@@ -25,8 +24,8 @@
 }
 
 .header-level-2 {
-  border-bottom: .1em solid #D3CCC1;
-  color: #7c334f;
+  border-bottom: .1em solid $canvas-color-dark-0;
+  color: $accent-color-1;
   font-size: 1.58em;
   line-height: 1.2;
   margin: .95em 0 .5em;
@@ -39,19 +38,18 @@
 }
 
 .header-level-4 {
-  color: #cd596b;
+  color: $accent-color-1-light-1;
   font-size: 1.2em;
   margin: .6em 0;
 }
 
 .header-level-5 {
-  color: #8b786f;
+  color: $accent-color-2-light-2;
   font-size: 1em;
   margin: .7em 0;
 }
 
 .header-level-6 {
-  font-size: .85em;
-  font-style: italic;
+  font: { size: .85em; style: italic; }
   margin: .8em 0;
 }
