@@ -22,7 +22,7 @@ module.exports = (grunt) ->
     watch:
       stylesheets:
         files: 'stylesheets/**/*.scss'
-        tasks: ['newer:sass', 'newer:autoprefixer']
+        tasks: ['sass', 'newer:autoprefixer']
 
   grunt.loadNpmTasks plugin for plugin in matchdep.filterDev 'grunt-*'
 
