@@ -14,6 +14,11 @@ module.exports = (grunt) ->
         src: 'stylesheets/main.css'
         dest: 'stylesheets/main.css'
 
+    copy:
+      lib:
+        src: 'node_modules/highlight.js/styles/solarized_light.css'
+        dest: 'stylesheets/content/_highlight-js.scss'
+
     sass:
       stylesheets:
         files:
@@ -26,4 +31,4 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks plugin for plugin in matchdep.filterDev 'grunt-*'
 
-  grunt.registerTask 'default', ['sass', 'autoprefixer', 'watch']
+  grunt.registerTask 'default', ['copy', 'sass', 'autoprefixer', 'watch']
