@@ -2,6 +2,15 @@
 
 /* content-based headers */
 
+%badge-container {
+  /* badges */
+  > * { vertical-align: middle; }
+  img {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
 #main-content {
   > .header-level-1:first-child,
   > .header-level-2:first-child,
@@ -14,6 +23,7 @@
 }
 
 .header-level-1 {
+  @extend %badge-container;
   border-bottom: .2em double $canvas-color-dark-0;
   color: $accent-color-1;
   font: { size: 1.85em; style: italic; }
@@ -24,6 +34,7 @@
 }
 
 .header-level-2 {
+  @extend %badge-container;
   border-bottom: .1em solid $canvas-color-dark-0;
   color: $accent-color-1;
   font-size: 1.58em;
