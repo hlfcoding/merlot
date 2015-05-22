@@ -97,8 +97,10 @@ td {
 td:last-child, th:last-child {
   border-right: none;
 }
-tr:last-child td {
-  border-bottom: none;
+table > tr:last-child {
+  th, td {
+    border-bottom: none;
+  }
 }
 
 dl {
