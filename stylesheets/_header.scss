@@ -21,7 +21,7 @@ header {
   h1 {
     background-color: $accent-color-1;
     color: $canvas-color;
-    font: { style: normal; weight: bolder; }
+    font: { style: normal; weight: 800; }
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
@@ -45,8 +45,8 @@ section#downloads {
     background: transparent url(../images/download-sprite.png) 0 0 no-repeat;
     color: #fff;
     display: block;
-    font: { family: #{$font-family-1}; size: 1.3em; weight: bolder; }
     height: 67px;
+    font: { family: #{$font-family-1}; size: 1.3em; weight: 800; }
     line-height: 1;
     padding-top: 130px;
     position: relative;
