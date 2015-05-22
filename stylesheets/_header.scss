@@ -5,14 +5,14 @@
 header {
   position: relative;
   z-index: 2;
-  span.ribbon-inner {
+  .ribbon-inner {
     background-color: $accent-color-1-light-1;
     border: { style: solid; color: $accent-color-1; }
     display: block;
     position: relative;
     z-index: 1;
   }
-  span.left-tail, span.right-tail {
+  .left-tail, .right-tail {
     background: { color: transparent; position: 0 0; repeat: no-repeat; }
     display: block;
     position: absolute;
@@ -93,21 +93,21 @@ section#main_content {
     margin: 0 auto;
     max-width: 600px;
     top: 38px;
-    span.ribbon-inner {
+    .ribbon-inner {
       border-width: 4px;
       padding: 2px;
     }
-    span.left-tail, span.right-tail {
+    .left-tail, .right-tail {
       background-image: url(../images/ribbon-tail-sprite.png);
       bottom: -37px;
       height: 105px;
       width: 56px;
     }
-    span.left-tail {
+    .left-tail {
       background-position: 0 0;
       left: -31px;
     }
-    span.right-tail {
+    .right-tail {
       background-position: -56px 0;
       right: -31px;
     }
@@ -143,21 +143,21 @@ section#main_content {
     margin: 0;
     max-width: $mobile-wrapper-width;
     top: 51px;
-    span.ribbon-inner {
+    .ribbon-inner {
       border-width: 8px;
       padding: 6px;
     }
-    span.left-tail, span.right-tail {
+    .left-tail, .right-tail {
       background-image: url(../images/ribbon-tail-sprite-2x.png);
       bottom: -10px;
       height: 10px;
       width: 19px;
     }
-    span.left-tail {
+    .left-tail {
       background-position: 0 0;
       left: 0;
     }
-    span.right-tail {
+    .right-tail {
       background-position: -19px 0;
       right: 0;
     }

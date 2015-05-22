@@ -6,12 +6,12 @@ footer {
   margin: -94px auto 40px;
   padding-top: 104px;
   text-align: center;
-  span.ribbon-outer {
+  .ribbon-outer {
     border-bottom: 2px solid $canvas-color-dark-1;
     display: block;
     position: relative;
   }
-  span.ribbon-inner {
+  .ribbon-inner {
     background-color: $accent-color-1-light-1;
     border: { style: solid; color: $accent-color-1; }
     display: block;
@@ -22,7 +22,7 @@ footer {
     color: $accent-color-2-light-2;
     font: { family: $font-family-1; weight: bold; }
   }
-  span.ribbon-inner p {
+  .ribbon-inner p {
     background-color: $accent-color-1;
     color: $accent-color-1-light-2;
     margin: 0;
@@ -30,7 +30,7 @@ footer {
   a {
     color: $accent-color-1-light-1;
   }
-  span.ribbon-inner a {
+  .ribbon-inner a {
     color: $accent-color-2-light-1;
     font: { family: $font-family-1; style: normal; weight: 800; }
     position: relative;
@@ -39,12 +39,12 @@ footer {
       color: $accent-color-2-light-1;
     }
   }
-  span.left-tail, span.right-tail {
+  .left-tail, .right-tail {
     display: block;
     position: absolute;
     z-index: 0;
   }
-  span.octocat {
+  .octocat {
     background: { color: transparent; position: 0 0; repeat: no-repeat; }    
     display: block;
   }
@@ -55,7 +55,7 @@ footer {
   footer {
     background: transparent url(../images/footer-ramp.jpg) center -1px no-repeat;
     max-width: 560px;
-    span.ribbon-inner {
+    .ribbon-inner {
       border-width: 2px;
       padding: 1px;
       a {
@@ -66,25 +66,25 @@ footer {
     p {
       font-size: .8em;
     }
-    span.ribbon-inner p {
+    .ribbon-inner p {
       font: bold italic 12px/1 #{$font-family-2};
       padding-bottom: 4px;
     }
-    span.left-tail, span.right-tail {
+    .left-tail, .right-tail {
       background: transparent url(../images/small-ribbon-tail-sprite.png) 0 0 no-repeat;
       bottom: 5px;
       height: 29px;
       width: 18px;
     }
-    span.left-tail {
+    .left-tail {
       background-position: 0 0;
       left: -11px;
     }
-    span.right-tail {
+    .right-tail {
       background-position: -18px 0;
       right: -11px;
     }
-    span.octocat {
+    .octocat {
       background-image: url(../images/octocat.png);
       width: 30px;
       height: 30px;
@@ -99,40 +99,40 @@ footer {
   footer {
     background: none;
     max-width: $mobile-wrapper-width;
-    span.ribbon-inner {
+    .ribbon-inner {
       border-width: 8px;
       padding: 6px;
     }
     p {
       font-size: .6em;
     }
-    span.ribbon-inner p {
+    .ribbon-inner p {
       font: bold italic 22px/1 #{$font-family-2};
       height: auto;
       line-height: 1.1;
       padding: 20px 0px 10px;
     }
-    span.ribbon-inner a {
+    .ribbon-inner a {
       bottom: 0;
       display: block;
       font-size: 38px;
       padding-bottom: 10px;
     }
-    span.left-tail, span.right-tail {
+    .left-tail, .right-tail {
       background: transparent url(../images/small-ribbon-tail-sprite-2x.png) 0 0 no-repeat;
       height: 126px;
       top: -126px;
       width: 23px;
     }
-    span.left-tail {
+    .left-tail {
       background-position: 0 0;
       left: 0;
     }
-    span.right-tail {
+    .right-tail {
       background-position: -23px 0;
       right: 0;
     }
-    span.octocat {
+    .octocat {
       background-image: url(../images/octocat-2x.png);
       height: 60px;
       margin: 20px auto 0;
