@@ -32,6 +32,11 @@ $font-family-2: Georgia, Times, 'Times New Roman', serif;
 // monospace font
 $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
 
+%clearfix {
+  &:before, &:after { content: ' '; display: table; }
+  &:after { clear: both; }
+}
+
 @mixin desktop {
   @media screen and (min-device-width: $mobile-outer-width) {
     @content;
