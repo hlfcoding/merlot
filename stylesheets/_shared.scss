@@ -5,9 +5,11 @@ $accent-color-1-light-2: #e69b95;
 
 // secondary accent color range
 $accent-color-2: #417090;
+$accent-color-2-light-0: #5b7e99;
 $accent-color-2-light-1: #7eb0d2;
 $accent-color-2-light-2: #8b786f;
 $accent-color-2-light-3: #83b7da;
+$accent-color-2-dark-1: #3d667c;
 
 // base color range, constrained to a dark-on-light theme
 $canvas-color: #ece4d8;
@@ -18,7 +20,7 @@ $canvas-color-dark-3: #544943;
 $canvas-color-light-1: #fff6e9;
 
 // layout sizes
-$full-wrapper-width: 670px;
+$full-wrapper-width: 800px;
 $mobile-wrapper-width: 640px;
 
 // responsive breakpoints

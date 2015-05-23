@@ -2,6 +2,13 @@
 
 /* wrapper */
 
+body {
+  background: {
+    color: $canvas-color;
+    image: linear-gradient(to bottom, $canvas-color, $canvas-color-dark-1);
+  }
+}
+
 div.shell {
   display: block;
   margin: 0 auto;
@@ -16,7 +23,7 @@ a#forkme_banner {
   text-indent: -9000px;
   top: 0;
   width: 138px;
-  z-index: 3;
+  z-index: 4;
   &:hover {
     background-position: 0 -138px;
   }

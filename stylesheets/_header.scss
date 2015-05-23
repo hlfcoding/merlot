@@ -4,10 +4,15 @@
 
 header {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  > .ribbon-outer {
+    @extend %clearfix;
+    display: block;
+  }
   .ribbon-inner {
     background-color: $accent-color-1-light-1;
     border: { style: solid; color: $accent-color-1; }
+    box-shadow: 0 30px 0 -25px $accent-color-2-dark-1;
     display: block;
     position: relative;
     z-index: 1;
@@ -36,62 +41,92 @@ header {
   }
 }
 
+$downloads-desktop-width: $full-wrapper-width - 120px;
+
+%downloads-tail-tip {
+  content: ' ';
+  position: absolute;
+  left: 0; right: 0; margin: { left: auto; right: auto; }
+  width: 0; height: 0;
+  border: {
+    style: solid; color: transparent;
+  }
+  @include desktop {
+    $width: $downloads-desktop-width / 2;
+    border: { left-width: $width; right-width: $width; }
+  }
+}
+
 section#downloads {
+  $shadow-color: mix($canvas-color, $canvas-color-dark-0);
+  $shadow-offset: 5px;
+  $tail-height: 30px;
+  $tail-pull: $shadow-offset - $tail-height;
+  background: $shadow-color;
   display: block;
-  padding-bottom: 150px;
+  padding-bottom: $shadow-offset;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  > .inner {
+    $bg-color: $accent-color-2-light-0;
+    $line-color: $accent-color-2-light-1;
+    background-color: $bg-color;
+    padding-bottom: 10px;
+    > .tip {
+      @extend %downloads-tail-tip;
+      bottom: $tail-pull;
+      border-top: { color: $bg-color; width: $tail-height; }
+      z-index: -1;
+    }
+  }
+  > .tip {
+    /* shadow */
+    @extend %downloads-tail-tip;
+    bottom: $tail-pull - $shadow-offset;
+    border-top: { color: $shadow-color; width: $tail-height; }
+    z-index: -2;
+  }
   a {
-    background: transparent url(../images/download-sprite.png) 0 0 no-repeat;
-    color: #fff;
-    display: block;
-    height: 67px;
+    $color: $accent-color-2-light-3;
+    color: $color;
+    display: inline-block;
     font: { family: #{$font-family-1}; size: 1.3em; weight: 800; }
     line-height: 1;
-    padding-top: 130px;
-    position: relative;
+    padding-top: 135px;
     text-align: center;
-    width: 275px;
+    width: 50%;
+    &:focus {
+      outline: none;
+    }
     &:hover {
+      color: lighten($color, 10%);
+      background-image: linear-gradient(to bottom, $accent-color-2-dark-1, transparent);
       text-decoration: none;
     }
     em {
-      color: $accent-color-2-light-3;
       display: block;
       font: bold italic 12px/1 #{$font-family-2};
-    }
-    &.zip {
-      float: left;
-      background-position: 0 0;
-      &:hover {
-        background-position: 0 -197px;
-      }
-    }
-    &.tgz {
-      float: right;
-      background-position: -275px 0;
-      &:hover {
-        background-position: -275px -197px;
-      }
+      margin-bottom: 0.5em;
     }
   }
 }
 
-span.banner-fix {
-  display: block;
-  position: absolute;
-}
-
 section#main_content {
+  background-image: linear-gradient(to bottom,
+    $canvas-color-light-1 200px,
+    $canvas-color 80%,
+    $canvas-color-dark-1
+  );
+  box-shadow: 0 -2px 1px 1px $canvas-color-dark-1;
   min-height: 185px;
-  z-index: 2;
+  z-index: 1;
 }
 
 @include desktop {
 
   header {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: $full-wrapper-width - 70px;
     top: 38px;
     .ribbon-inner {
       border-width: 4px;
@@ -118,21 +153,13 @@ section#main_content {
   }
 
   section#downloads {
-    background: transparent url(../images/bg-ramp.jpg) center 171px no-repeat;
-    height: 197px;
-    margin: -80px auto -150px;
-    width: 550px;
-  }
-
-  span.banner-fix {
-    background: transparent url(../images/download-fallback-bg.png) center top no-repeat;
-    height: 19px;
-    top: 19px;
-    width: 670px;
+    margin: -80px auto 10px;
+    width: $downloads-desktop-width;
   }
 
   section#main_content {
-    padding: 20px 82px 0;
+    margin: -215px 66px -235px;
+    padding: 230px 20px 200px;
   }
 
 }
@@ -175,13 +202,6 @@ section#main_content {
     a {
       display: none;
     }
-  }
-
-  span.banner-fix {
-    background: transparent url(../images/shield-fallback.png) center top no-repeat;
-    height: 31px;
-    top: 20px;
-    width: $mobile-wrapper-width;
   }
 
   section#main_content {
