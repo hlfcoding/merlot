@@ -21,11 +21,10 @@ $canvas-color-light-1: #fff6e9;
 
 // layout sizes
 $full-wrapper-width: 800px;
-$mobile-wrapper-width: 640px;
 
-// responsive breakpoints
-$mobile-inner-width: $mobile-wrapper-width;
-$mobile-outer-width: $mobile-inner-width + 1px;
+$mobile-wrapper-width: 320px;
+$tablet-wrapper-width: 640px;
+$desktop-wrapper-width: $full-wrapper-width;
 
 // headline font
 $font-family-1: 'Open Sans', Myriad, Calibri, sans-serif;
@@ -39,14 +38,104 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
   &:after { clear: both; }
 }
 
-@mixin desktop {
-  @media screen and (min-device-width: $mobile-outer-width) {
-    @content;
+@mixin ribbon-tails($height, $width, $shadow-offset, $backface-hint-size,
+                    $backface-hint-x-offset, $backface-hint-y-offset,
+                    $bg-color: $canvas-color,
+                    $from-angle: bottom,
+                    $ribbon-color: $accent-color-1)
+{
+  $color: darken($ribbon-color, 7%);
+  $shadow-color: darken($color, 7%);
+  $x-offset: round($width * 0.55);
+  $y-offset: round($height * 0.35);
+  .left-tail, .right-tail {
+    background: {
+      color: $color;
+      clip: border-box; // be explicit
+    }
+    border: {
+      color: transparent;
+      style: solid;
+      top-width: round($height / 2); bottom-width: round($height / 2);
+    }
+    box-shadow: 0 $shadow-offset 0 $canvas-color-dark-1;
+    display: block;
+    position: absolute;
+    width: 0; height: 0;
+    z-index: 0;
+    @if $from-angle == bottom {
+      bottom: -$y-offset;
+    } @else if $from-angle == top {
+      bottom: $y-offset;
+    }
+    /* backface depth hint */
+    &:after {
+      $size: $backface-hint-size;
+      background: {
+        color: $shadow-color;
+        clip: border-box; // be explicit
+      }
+      border: {
+        color: transparent;
+        style: solid;
+        width: $backface-hint-size / 2;
+      }
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 0; height: 0;
+      @if $from-angle == bottom {
+        border-bottom-color: $color;
+        top: $backface-hint-y-offset;
+      } @else if $from-angle == top {
+        border-top-color: $color;
+        bottom: $backface-hint-y-offset;
+      }
+    }
+  }
+  .left-tail {
+    left: -$x-offset;
+    border: {
+      left: { color: $bg-color; width: round($width / 3); }
+      right-width: round($width * 2 / 3);
+    }
+    &:after {
+      border-left-color: $color;
+      left: $backface-hint-x-offset;
+    }
+  }
+  .right-tail {
+    right: -$x-offset;
+    border: {
+      left-width: round($width * 2 / 3);
+      right: { color: $bg-color; width: round($width / 3); }
+    }
+    &:after {
+      border-right-color: $color;
+      right: $backface-hint-x-offset;
+    }
   }
 }
 
+// media mixins
+
+@mixin desktop {
+  @media screen and (min-device-width: $desktop-wrapper-width) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-device-width: $tablet-wrapper-width) and (max-device-width: $desktop-wrapper-width - 1px) {
+    @content;
+  }
+}
 @mixin mobile {
-  @media screen and (max-device-width: $mobile-inner-width) {
+  @media screen and (max-device-width: $tablet-wrapper-width - 1px) {
+    @content;
+  }
+}
+@mixin non-mobile {
+  @media screen and (min-device-width: $tablet-wrapper-width) {
     @content;
   }
 }

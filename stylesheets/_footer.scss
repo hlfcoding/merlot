@@ -2,13 +2,16 @@
 
 /* footer */
 
+$shadow-offset: 2px;
+$ribbon-gutter-width: 114px;
+
 footer {
-  margin: -94px auto 40px;
-  padding-top: 104px;
+  margin: 0 auto 40px;
+  padding-top: 60px;
   text-align: center;
   z-index: 5;
   .ribbon-outer {
-    border-bottom: 2px solid $canvas-color-dark-1;
+    border-bottom: $shadow-offset solid $canvas-color-dark-1;
     display: block;
     position: relative;
   }
@@ -40,21 +43,19 @@ footer {
       color: $accent-color-2-light-1;
     }
   }
-  .left-tail, .right-tail {
-    display: block;
-    position: absolute;
-    z-index: 0;
-  }
   .octocat {
     background: { color: transparent; position: 0 0; repeat: no-repeat; }    
     display: block;
   }
 }
 
-@include desktop {
+@include non-mobile {
 
   footer {
-    max-width: $full-wrapper-width - 118px;
+    @include ribbon-tails($height: 29px, $width: 18px, $shadow-offset: $shadow-offset,
+                          $backface-hint-size: 8px, $backface-hint-x-offset: 4px,
+                          $backface-hint-y-offset: 3px,
+                          $from-angle: top);
     .ribbon-inner {
       border-width: 2px;
       padding: 1px;
@@ -68,21 +69,7 @@ footer {
     }
     .ribbon-inner p {
       font: bold italic 12px/1 #{$font-family-2};
-      padding-bottom: 4px;
-    }
-    .left-tail, .right-tail {
-      background: transparent url(../images/small-ribbon-tail-sprite.png) 0 0 no-repeat;
-      bottom: 5px;
-      height: 29px;
-      width: 18px;
-    }
-    .left-tail {
-      background-position: 0 0;
-      left: -11px;
-    }
-    .right-tail {
-      background-position: -18px 0;
-      right: -11px;
+      padding: { top: 3px; bottom: 4px; }
     }
     .octocat {
       background-image: url(../images/octocat.png);
@@ -92,6 +79,18 @@ footer {
     }
   }
 
+}
+
+@include desktop {
+  footer {
+    width: $desktop-wrapper-width - $ribbon-gutter-width;
+  }
+}
+
+@include tablet {
+  footer {
+    width: $tablet-wrapper-width - $ribbon-gutter-width;
+  }
 }
 
 @include mobile {

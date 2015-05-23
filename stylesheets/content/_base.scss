@@ -115,7 +115,7 @@ dd p:first-child {
   margin-top: 0;
 }
 
-@include desktop {
+@include non-mobile {
 
   body {
     font: normal normal 15px/1.5 #{$font-family-2};

@@ -2,8 +2,37 @@
 
 /* header */
 
+$shadow-offset: 5px;
+$ribbon-gutter-width: 70px;
+
+$downloads-gutter-width: 120px;
+$downloads-desktop-width: $desktop-wrapper-width - $downloads-gutter-width;
+$downloads-tablet-width: $tablet-wrapper-width - $downloads-gutter-width;
+
+$content-gutter-width: 170px;
+$content-desktop-width: $desktop-wrapper-width - $content-gutter-width;
+$content-tablet-width: $tablet-wrapper-width - $content-gutter-width;
+
+%downloads-tail-tip {
+  position: absolute;
+  left: 0; right: 0; margin: { left: auto; right: auto; }
+  width: 0; height: 0;
+  border: {
+    style: solid; color: transparent;
+  }
+  @include desktop {
+    $width: $downloads-desktop-width / 2;
+    border: { left-width: $width; right-width: $width; }
+  }
+  @include tablet {
+    $width: $downloads-tablet-width / 2;
+    border: { left-width: $width; right-width: $width; }
+  }
+}
+
 header {
   /* base */
+  margin: 0 auto;
   position: relative;
   z-index: 3;
   > .ribbon-outer {
@@ -17,12 +46,6 @@ header {
     display: block;
     position: relative;
     z-index: 1;
-  }
-  .left-tail, .right-tail {
-    background: { color: transparent; position: 0 0; repeat: no-repeat; }
-    display: block;
-    position: absolute;
-    z-index: 0;
   }
   h1 {
     background-color: $accent-color-1;
@@ -42,26 +65,9 @@ header {
   }
 }
 
-$downloads-desktop-width: $full-wrapper-width - 120px;
-
-%downloads-tail-tip {
-  content: ' ';
-  position: absolute;
-  left: 0; right: 0; margin: { left: auto; right: auto; }
-  width: 0; height: 0;
-  border: {
-    style: solid; color: transparent;
-  }
-  @include desktop {
-    $width: $downloads-desktop-width / 2;
-    border: { left-width: $width; right-width: $width; }
-  }
-}
-
 section#downloads {
   /* base */
   $shadow-color: mix($canvas-color, $canvas-color-dark-0);
-  $shadow-offset: 5px;
   $tail-height: 30px;
   $tail-pull: $shadow-offset - $tail-height;
   background: $shadow-color;
@@ -102,7 +108,7 @@ section#downloads {
     }
     &:hover {
       color: lighten($color, 10%);
-      background-image: linear-gradient(to bottom, $accent-color-2-dark-1, transparent);
+      background-image: linear-gradient(to bottom, $accent-color-2-dark-1, $accent-color-2-light-0);
       text-decoration: none;
     }
     em {
@@ -118,36 +124,23 @@ section#main_content {
   background-image: linear-gradient(to bottom,
     $canvas-color-light-1 200px,
     $canvas-color 80%,
-    $canvas-color-dark-1
+    $canvas-color-dark-0
   );
   box-shadow: 0 -2px 1px 1px $canvas-color-dark-1;
   min-height: 185px;
   z-index: 1;
 }
 
-@include desktop {
+@include non-mobile {
 
   header {
-    margin: 0 auto;
-    max-width: $full-wrapper-width - 70px;
+    @include ribbon-tails($height: 105px, $width: 56px, $shadow-offset: $shadow-offset,
+                          $backface-hint-size: 25px, $backface-hint-x-offset: 12px,
+                          $backface-hint-y-offset: 16px);
     top: 38px;
     .ribbon-inner {
       border-width: 4px;
       padding: 2px;
-    }
-    .left-tail, .right-tail {
-      background-image: url(../images/ribbon-tail-sprite.png);
-      bottom: -37px;
-      height: 105px;
-      width: 56px;
-    }
-    .left-tail {
-      background-position: 0 0;
-      left: -31px;
-    }
-    .right-tail {
-      background-position: -56px 0;
-      right: -31px;
     }
     h1 {
       font-size: 2.5em;
@@ -157,20 +150,43 @@ section#main_content {
 
   section#downloads {
     margin: -80px auto 10px;
-    width: $downloads-desktop-width;
   }
 
   section#main_content {
-    margin: -215px 66px -235px;
+    margin: { top: -215px; bottom: -235px; }
+    margin: { left: auto; right: auto; }
     padding: 230px 20px 200px;
   }
 
 }
 
+@include desktop {
+  header {
+    width: $desktop-wrapper-width - $ribbon-gutter-width;
+  }
+  section#downloads {
+    width: $downloads-desktop-width;
+  }
+  section#main_content {
+    width: $content-desktop-width;
+  }
+}
+
+@include tablet {
+  header {
+    width: $tablet-wrapper-width - $ribbon-gutter-width;
+  }
+  section#downloads {
+    width: $downloads-tablet-width;
+  }
+  section#main_content {
+    width: $content-tablet-width;
+  }
+}
+
 @include mobile {
 
   header {
-    margin: 0;
     max-width: $mobile-wrapper-width;
     top: 51px;
     .ribbon-inner {

@@ -5,7 +5,6 @@
 body {
   background: {
     color: $canvas-color;
-    image: linear-gradient(to bottom, $canvas-color, $canvas-color-dark-1);
   }
 }
 
@@ -30,11 +29,15 @@ a#forkme_banner {
 }
 
 @include desktop {
-
   div.shell {
-    width: $full-wrapper-width;
+    width: $desktop-wrapper-width;
   }
+}
 
+@include tablet {
+  div.shell {
+    width: $tablet-wrapper-width;
+  }
 }
 
 @include mobile {
