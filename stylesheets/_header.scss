@@ -3,6 +3,7 @@
 /* header */
 
 header {
+  /* base */
   position: relative;
   z-index: 3;
   > .ribbon-outer {
@@ -58,6 +59,7 @@ $downloads-desktop-width: $full-wrapper-width - 120px;
 }
 
 section#downloads {
+  /* base */
   $shadow-color: mix($canvas-color, $canvas-color-dark-0);
   $shadow-offset: 5px;
   $tail-height: 30px;
@@ -112,6 +114,7 @@ section#downloads {
 }
 
 section#main_content {
+  /* base */
   background-image: linear-gradient(to bottom,
     $canvas-color-light-1 200px,
     $canvas-color 80%,
