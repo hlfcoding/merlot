@@ -120,22 +120,22 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
 // media mixins
 
 @mixin desktop {
-  @media screen and (min-device-width: $desktop-wrapper-width) {
+  @media screen and (min-width: $desktop-wrapper-width) {
     @content;
   }
 }
 @mixin tablet {
-  @media screen and (min-device-width: $tablet-wrapper-width) and (max-device-width: $desktop-wrapper-width - 1px) {
+  @media screen and (min-width: $tablet-wrapper-width) and (max-width: $desktop-wrapper-width - 1px) {
     @content;
   }
 }
 @mixin mobile {
-  @media screen and (max-device-width: $tablet-wrapper-width - 1px) {
+  @media screen and (max-width: $tablet-wrapper-width - 1px) {
     @content;
   }
 }
 @mixin non-mobile {
-  @media screen and (min-device-width: $tablet-wrapper-width) {
+  @media screen and (min-width: $tablet-wrapper-width) {
     @content;
   }
 }
