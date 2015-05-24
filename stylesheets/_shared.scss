@@ -49,16 +49,11 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
   $x-offset: round($width * 0.55);
   $y-offset: round($height * 0.35);
   .left-tail, .right-tail {
-    background: {
-      color: $color;
-      clip: border-box; // be explicit
-    }
     border: {
       color: transparent;
       style: solid;
       top-width: round($height / 2); bottom-width: round($height / 2);
     }
-    box-shadow: 0 $shadow-offset 0 $canvas-color-dark-1;
     display: block;
     position: absolute;
     width: 0; height: 0;
@@ -71,12 +66,8 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
     /* backface depth hint */
     &:after {
       $size: $backface-hint-size;
-      background: {
-        color: $shadow-color;
-        clip: border-box; // be explicit
-      }
       border: {
-        color: transparent;
+        color: $shadow-color;
         style: solid;
         width: $backface-hint-size / 2;
       }
@@ -85,34 +76,51 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
       position: absolute;
       width: 0; height: 0;
       @if $from-angle == bottom {
-        border-bottom-color: $color;
+        border-bottom-color: transparent;
         top: $backface-hint-y-offset;
       } @else if $from-angle == top {
-        border-top-color: $color;
+        border-top-color: transparent;
         bottom: $backface-hint-y-offset;
       }
     }
   }
   .left-tail {
-    left: -$x-offset;
     border: {
-      left: { color: $bg-color; width: round($width / 3); }
+      left-width: round($width / 3);
       right-width: round($width * 2 / 3);
     }
+    left: -$x-offset;
+    /* backface depth hint */
     &:after {
-      border-left-color: $color;
+      border-left-color: transparent;
       left: $backface-hint-x-offset;
     }
   }
   .right-tail {
-    right: -$x-offset;
     border: {
       left-width: round($width * 2 / 3);
-      right: { color: $bg-color; width: round($width / 3); }
+      right-width: round($width / 3);
     }
+    right: -$x-offset;
+    /* backface depth hint */
     &:after {
-      border-right-color: $color;
+      border-right-color: transparent;
       right: $backface-hint-x-offset;
+    }
+  }
+  @include non-mobile {
+    .left-tail, .right-tail {
+      background: {
+        color: $color;
+        clip: border-box; // be explicit
+      }
+      box-shadow: 0 $shadow-offset 0 $canvas-color-dark-1;
+    }
+    .left-tail {
+      border-left-color: $bg-color;
+    }
+    .right-tail {
+      border-right-color: $bg-color;
     }
   }
 }
