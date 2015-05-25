@@ -4,6 +4,7 @@
 
 body {
   color: $canvas-color-dark-3;
+  font: normal normal 15px/1.5 #{$font-family-2};
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,27 +30,44 @@ em {
   font-style: italic;
 }
 
+p {
+  margin: .7em 0;
+}
+
 ol {
   list-style-type: decimal;
   margin: .7em 0;
   padding-left: 1.35em;
 }
-
 ul {
   margin: .7em 0;
-  padding-left: 1.35em;
+  li {
+    background: transparent url(../images/chevron.png) left 6px no-repeat;
+    background-size: 7px 9px;  
+    padding-left: 1.35em;
+  }
 }
 
 blockquote {
+  background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
+  background-size: 17px 13px;
   color: $canvas-color-dark-2;
   font-family: $font-family-1;
   margin: 20px 0;
   padding-left: 1.35em;
 }
 
+img {
+  border: 2px solid $canvas-color-light-1;
+  box-shadow: 0px 2px 0px $canvas-color-dark-1;
+  max-width: 502px; // FIXME
+}
+
 hr {
-  background: { color: transparent; position: center center; repeat: repeat-x; }
-  border: none;
+  background: transparent url(../images/hr.png) center repeat-x;
+  background-size: cover;
+  border: 0;
+  height: 18px;
   margin: 0 0 20px;
   outline: none;
 }
@@ -63,7 +81,7 @@ code {
 
 pre {
   background: $canvas-color-light-1;
-  border-bottom: { style: solid; color: $canvas-color-dark-1; }
+  border-bottom: 2px solid $canvas-color-dark-1;
   font: normal normal .9em/1.7 #{$font-family-3};
   margin: 10px 0 20px;
   overflow: auto;
@@ -72,8 +90,10 @@ pre {
 
 table {
   background: $canvas-color-light-1;
-  border-bottom: { style: solid; color: $canvas-color-dark-1; }
-  border-collapse: separate;
+  border: {
+    bottom: 2px solid $canvas-color-dark-1;
+    collapse: separate;
+  }
   display: table;
   margin: 10px 0;
   width: 100%;
@@ -82,14 +102,22 @@ tr {
   display: table-row;
 }
 th {
-  border: { style: solid; color: $canvas-color; }
+  border: {
+    style: solid;
+    color: $canvas-color;
+    width: 0 2px 2px 0;
+  }
   color: $accent-color-1-light-1;
   display: table-cell;
   font: { family: $font-family-1; size: .85em; weight: bold; }
   padding: 2px 10px;
 }
 td {
-  border: { style: solid; color: $canvas-color; }
+  border: {
+    style: solid;
+    color: $canvas-color;
+    width: 0 2px 2px 0;
+  }
   display: table-cell;
   padding: 0 .7em;
 }
@@ -115,94 +143,16 @@ dd p:first-child {
   margin-top: 0;
 }
 
-@include non-mobile {
-
-  body {
-    font: normal normal 15px/1.5 #{$font-family-2};
-  }
-
-  p {
-    margin: .7em 0;
-  }
-
-  ul  li {
-    background: transparent url(../images/chevron.png) left 6px no-repeat;
-    padding-left: 10px;
-  }
-
-  blockquote {
-    background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
-  }
-
-  img {
-    border: 2px solid $canvas-color-light-1;
-    box-shadow: 0px 2px 0px $canvas-color-dark-1;
-    max-width: 502px;
-  }
-
-  hr {
-    background-image: url(../images/hr.png);
-    height: 18px;
-  }
-
-  pre {
-    border-bottom-width: 2px;
-  }
-
-  table {
-    border-bottom-width: 2px;
-  }
-  th {
-    border-width: 0 2px 2px 0;
-  }
-  td {
-    border-width: 0 2px 2px 0;
-  }
-
-}
-
-@include mobile {
-
-  body {
-    font: normal normal 30px/1.5 #{$font-family-2};
-  }
-
-  p {
-    margin: .7em 0 0;
-  }
+@include retina {
 
   ul li {
-    background: transparent url(../images/chevron-2x.png) left 15px no-repeat;
-    padding-left: 20px;
+    background-image: url(../images/chevron-2x.png);
   }
-
   blockquote {
-    background: transparent url(../images/blockquote-gfx-2x.png) 0 8px no-repeat;
+    background-image: url(../images/blockquote-gfx-2x.png);
   }
-
-  img {
-    box-shadow: 0px 4px 0px $canvas-color-dark-1;
-    border: 4px solid $canvas-color-light-1;
-    max-width: 556px;
-  }
-
   hr {
     background-image: url(../images/hr-2x.png);
-    height: 42px;
-  }
-
-  pre {
-    border-bottom-width: 4px;
-  }
-
-  table {
-    border-bottom-width: 4px;
-  }
-  th {
-    border-width: 0 4px 4px 0;
-  }
-  td {
-    border-width: 0 4px 4px 0;
   }
 
 }

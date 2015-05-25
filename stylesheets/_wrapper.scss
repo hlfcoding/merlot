@@ -40,14 +40,11 @@ a#forkme_banner {
   }
 }
 
-@include mobile {
-
+@include phone {
   div.shell {
-    width: $mobile-wrapper-width;
+    width: $phone-wrapper-width;
   }
-
   a#forkme_banner {
     display: none;
   }
-
 }

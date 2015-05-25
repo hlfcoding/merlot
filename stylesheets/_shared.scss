@@ -22,7 +22,7 @@ $canvas-color-light-1: #fff6e9;
 // layout sizes
 $full-wrapper-width: 800px;
 
-$mobile-wrapper-width: 320px;
+$phone-wrapper-width: 320px;
 $tablet-wrapper-width: 640px;
 $desktop-wrapper-width: $full-wrapper-width;
 
@@ -61,7 +61,7 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
     @if $from-angle == bottom {
       bottom: -$y-offset;
     } @else if $from-angle == top {
-      bottom: $y-offset;
+      top: -$y-offset;
     }
     /* backface depth hint */
     &:after {
@@ -137,13 +137,18 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
     @content;
   }
 }
-@mixin mobile {
+@mixin phone {
   @media screen and (max-width: $tablet-wrapper-width - 1px) {
     @content;
   }
 }
 @mixin non-mobile {
   @media screen and (min-width: $tablet-wrapper-width) {
+    @content;
+  }
+}
+@mixin retina {
+  @media screen and (min-resolution: 2dppx) {
     @content;
   }
 }

@@ -4,8 +4,13 @@
 
 $shadow-offset: 2px;
 $ribbon-gutter-width: 114px;
+$ribbon-less-gutter-width: 44px;
 
 footer {
+  @include ribbon-tails($height: 29px, $width: 18px, $shadow-offset: $shadow-offset,
+                        $backface-hint-size: 8px, $backface-hint-x-offset: 4px,
+                        $backface-hint-y-offset: 5px,
+                        $from-angle: top);
   margin: 0 auto 40px;
   padding-top: 60px;
   text-align: center;
@@ -17,26 +22,34 @@ footer {
   }
   .ribbon-inner {
     background-color: $accent-color-1-light-1;
-    border: { style: solid; color: $accent-color-1; }
+    border: 2px solid $accent-color-1;
     display: block;
+    padding: 1px;
     position: relative;
     z-index: 1;
   }
   p {
     color: $accent-color-2-light-2;
-    font: { family: $font-family-1; weight: bold; }
+    font: bold 0.8em $font-family-1;
+    padding: { left: 1em; right: 1em; }
+  }
+  > p {
+    margin: { top: 1.4em; bottom: 1.4em; }
   }
   .ribbon-inner p {
     background-color: $accent-color-1;
     color: $accent-color-1-light-2;
+    font: bold italic 12px/1 #{$font-family-2};
     margin: 0;
+    padding: { top: 3px; bottom: 4px; }
   }
   a {
     color: $accent-color-1-light-1;
   }
   .ribbon-inner a {
+    bottom: -1px;
     color: $accent-color-2-light-1;
-    font: { family: $font-family-1; style: normal; weight: 800; }
+    font: normal 800 1.2em $font-family-1;
     position: relative;
     text-transform: uppercase;
     &:hover {
@@ -44,41 +57,14 @@ footer {
     }
   }
   .octocat {
-    background: { color: transparent; position: 0 0; repeat: no-repeat; }    
+    $size: 30px;
+    background: url(../images/octocat.png) no-repeat;
+    background-size: cover;
     display: block;
+    width: $size;
+    height: $size;
+    margin: 0 auto;
   }
-}
-
-@include non-mobile {
-
-  footer {
-    @include ribbon-tails($height: 29px, $width: 18px, $shadow-offset: $shadow-offset,
-                          $backface-hint-size: 8px, $backface-hint-x-offset: 4px,
-                          $backface-hint-y-offset: 3px,
-                          $from-angle: top);
-    .ribbon-inner {
-      border-width: 2px;
-      padding: 1px;
-      a {
-        bottom: -1px;
-        font-size: 1.2em;
-      }
-    } 
-    p {
-      font-size: .8em;
-    }
-    .ribbon-inner p {
-      font: bold italic 12px/1 #{$font-family-2};
-      padding: { top: 3px; bottom: 4px; }
-    }
-    .octocat {
-      background-image: url(../images/octocat.png);
-      width: 30px;
-      height: 30px;
-      margin: 0 auto;
-    }
-  }
-
 }
 
 @include desktop {
@@ -93,50 +79,16 @@ footer {
   }
 }
 
-@include mobile {
-
+@include phone {
   footer {
-    background: none;
-    max-width: $mobile-wrapper-width;
-    .ribbon-inner {
-      border-width: 8px;
-      padding: 6px;
-    }
-    p {
-      font-size: .6em;
-    }
-    .ribbon-inner p {
-      font: bold italic 22px/1 #{$font-family-2};
-      height: auto;
-      line-height: 1.1;
-      padding: 20px 0px 10px;
-    }
-    .ribbon-inner a {
-      bottom: 0;
-      display: block;
-      font-size: 38px;
-      padding-bottom: 10px;
-    }
-    .left-tail, .right-tail {
-      background: transparent url(../images/small-ribbon-tail-sprite-2x.png) 0 0 no-repeat;
-      height: 126px;
-      top: -126px;
-      width: 23px;
-    }
-    .left-tail {
-      background-position: 0 0;
-      left: 0;
-    }
-    .right-tail {
-      background-position: -23px 0;
-      right: 0;
-    }
+    width: $phone-wrapper-width - $ribbon-less-gutter-width;
+  }
+}
+
+@include retina {
+  footer {
     .octocat {
       background-image: url(../images/octocat-2x.png);
-      height: 60px;
-      margin: 20px auto 0;
-      width: 60px;
     }
   }
-  
 }
