@@ -64,10 +64,11 @@ img {
 }
 
 hr {
+  $height: 18px;
   background: transparent url(../images/hr.png) center repeat-x;
-  background-size: cover;
+  background-size: auto $height;
   border: 0;
-  height: 18px;
+  height: $height;
   margin: 0 0 20px;
   outline: none;
 }

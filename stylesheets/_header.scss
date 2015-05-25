@@ -11,14 +11,18 @@ $downloads-gutter-width-no-ribbon: 48px;
 
 $downloads-desktop-width: $desktop-wrapper-width - $downloads-gutter-width;
 $downloads-tablet-width: $tablet-wrapper-width - $downloads-gutter-width;
+$downloads-phablet-width: $phablet-wrapper-width -  $downloads-gutter-width-no-ribbon;
 $downloads-phone-width: $phone-wrapper-width - $downloads-gutter-width-no-ribbon;
+$downloads-pod-width: $pod-wrapper-width - $downloads-gutter-width-no-ribbon;
 
 $content-gutter-width: $downloads-gutter-width + ($downloads-content-offset * 2);
 $content-gutter-width-no-ribbon: $downloads-gutter-width-no-ribbon + ($downloads-content-offset * 2);
 
 $content-desktop-width: $desktop-wrapper-width - $content-gutter-width;
 $content-tablet-width: $tablet-wrapper-width - $content-gutter-width;
+$content-phablet-width: $phablet-wrapper-width - $content-gutter-width-no-ribbon;
 $content-phone-width: $phone-wrapper-width - $content-gutter-width-no-ribbon;
+$content-pod-width: $pod-wrapper-width - $content-gutter-width-no-ribbon;
 
 %downloads-tail-tip {
   position: absolute;
@@ -35,8 +39,16 @@ $content-phone-width: $phone-wrapper-width - $content-gutter-width-no-ribbon;
     $width: $downloads-tablet-width / 2;
     border: { left-width: $width; right-width: $width; }
   }
+  @include phablet {
+    $width: $downloads-phablet-width / 2;
+    border: { left-width: $width; right-width: $width; }
+  }
   @include phone {
     $width: $downloads-phone-width / 2;
+    border: { left-width: $width; right-width: $width; }
+  }
+  @include pod {
+    $width: $downloads-pod-width / 2;
     border: { left-width: $width; right-width: $width; }
   }
 }
@@ -177,6 +189,18 @@ section#main_content {
   }
 }
 
+@include phablet {
+  header {
+    width: $phablet-wrapper-width;
+  }
+  section#downloads {
+    width: $downloads-phablet-width;
+  }
+  section#main_content {
+    width: $content-phablet-width;
+  }
+}
+
 @include phone {
   header {
     width: $phone-wrapper-width;
@@ -186,5 +210,17 @@ section#main_content {
   }
   section#main_content {
     width: $content-phone-width;
+  }
+}
+
+@include pod {
+  header {
+    width: $pod-wrapper-width;
+  }
+  section#downloads {
+    width: $downloads-pod-width;
+  }
+  section#main_content {
+    width: $content-pod-width;
   }
 }

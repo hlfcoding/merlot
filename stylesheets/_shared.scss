@@ -22,8 +22,11 @@ $canvas-color-light-1: #fff6e9;
 // layout sizes
 $full-wrapper-width: 800px;
 
-$phone-wrapper-width: 320px;
-$tablet-wrapper-width: 640px;
+$pod-wrapper-width: 320px; // iPhone 5; running out of names, I guess this size
+                           // is more for iPods these days.
+$phone-wrapper-width: 375px; // iPhone 6
+$phablet-wrapper-width: 414px; // iPhone 6+
+$tablet-wrapper-width: 600px; // Nexus 7
 $desktop-wrapper-width: $full-wrapper-width;
 
 // headline font
@@ -127,18 +130,31 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
 
 // media mixins
 
+// unfortunately the design requires some hard-coded widths,
+// so more breakpoints are needed.
+
 @mixin desktop {
   @media screen and (min-width: $desktop-wrapper-width) {
     @content;
   }
 }
 @mixin tablet {
-  @media screen and (min-width: $tablet-wrapper-width) and (max-width: $desktop-wrapper-width - 1px) {
+  @media screen and (min-width: $tablet-wrapper-width) and (max-width: $desktop-wrapper-width) {
+    @content;
+  }
+}
+@mixin phablet {
+  @media screen and (min-width: $phablet-wrapper-width) and (max-width: $tablet-wrapper-width) {
     @content;
   }
 }
 @mixin phone {
-  @media screen and (max-width: $tablet-wrapper-width - 1px) {
+  @media screen and (min-width: $phone-wrapper-width) and (max-width: $phablet-wrapper-width) {
+    @content;
+  }
+}
+@mixin pod {
+  @media screen and (max-width: $phone-wrapper-width) {
     @content;
   }
 }
@@ -147,8 +163,13 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
     @content;
   }
 }
+@mixin mobile {
+  @media screen and (max-width: $tablet-wrapper-width) {
+    @content;
+  }
+}
 @mixin retina {
-  @media screen and (min-resolution: 2dppx) {
+  @media screen and (min-resolution: 2dppx), screen and (min-resolution: 120dpi) {
     @content;
   }
 }

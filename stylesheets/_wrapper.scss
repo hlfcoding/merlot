@@ -40,10 +40,25 @@ a#forkme_banner {
   }
 }
 
+@include phablet {
+  div.shell {
+    width: $phablet-wrapper-width;
+  }
+}
+
 @include phone {
   div.shell {
     width: $phone-wrapper-width;
   }
+}
+
+@include pod {
+  div.shell {
+    width: $pod-wrapper-width;
+  }
+}
+
+@include mobile {
   a#forkme_banner {
     display: none;
   }

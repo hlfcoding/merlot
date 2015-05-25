@@ -79,9 +79,21 @@ footer {
   }
 }
 
+@include phablet {
+  footer {
+    width: $phablet-wrapper-width - $ribbon-less-gutter-width;
+  }
+}
+
 @include phone {
   footer {
     width: $phone-wrapper-width - $ribbon-less-gutter-width;
+  }
+}
+
+@include pod {
+  footer {
+    width: $pod-wrapper-width - $ribbon-less-gutter-width;
   }
 }
 
