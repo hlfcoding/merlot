@@ -25,8 +25,8 @@
       <header>
         <div class="ribbon-outer">
           <div class="ribbon-inner">
-            <h1>Merlot</h1>
-            <h2>a fancy schmancy theme for github pages</h2>
+            <h1>Merlot &apos;15</h1>
+            <h2>a fancy schmancy (&amp; updated) pages theme</h2>
           </div>
           <div class="left-tail" role="presentation"></div>
           <div class="right-tail" role="presentation"></div>
@@ -44,7 +44,7 @@
       <section id="main_content">
 
         <h1 class="header-level-1">
-          Merlot
+          Merlot &apos;15
           <a href="javascript:">
             <img src="https://travis-ci.org/hlfcoding/hlf-jquery.svg?branch=master" alt="Build Status">
           </a>
@@ -52,48 +52,70 @@
 
         <h2 class="header-level-2">
           Welcome to the Merlot
-          <img src="https://travis-ci.org/hlfcoding/hlf-jquery.svg?branch=master" alt="Build Status">
         </h2>
 
         <h4 class="header-level-4">Introduction</h4>
-
-        <p>We both know that you're pretty <strong>awesome</strong>. Why not have a <em>fancy</em> site for your code? <code>You = Awesome;</code> <code>YourCode = Awesome;</code> So much awesome in one place.</p>
-
-        <p>Use this repo to build your own page, or generate one with <a href="http://pages.github.com">GitHub Pages</a>.</p>
+        <p>
+          We both know that the original Merlot's pretty <strong>awesome</strong>.
+          Why not <em>update</em> it to be even more awesome?
+          <code>Merlot /= Sass;</code>
+          <code>Merlot += contentStyling;</code>
+          <code>Merlot -= imageRequests;</code>
+          <code>Merlot *= responsiveness;</code>
+          So much awesome in one place. Keep reading for more details.
+        </p>
+        <p>
+          Also, hopefully you'll notice the <code>&lt;header&gt;</code>,
+          <code>#main_content</code>, and <code>&lt;footer&gt;</code> all look
+          slightly different. That's because images are no longer used besides
+          for icons and more complex graphics. The <code>&lt;hr&gt;</code> below
+          still uses images, but those images are now transparent and based on a
+          Sketch file.
+        </p>
 
         <hr>
 
         <h3 class="header-level-3">Text Blocks</h3>
 
-        <blockquote>This is a block quote. We both know that you're pretty awesome. Why not have a fancy site for your code? You = Awesome. Your code = Awesome. So much awesome in one place.</blockquote>
+        <blockquote>
+          This is a block quote. It hasn't changed much. Except maybe its
+          <code>font-size</code> isn't doubled for mobile viewports, like with
+          most of the other elements.
+        </blockquote>
 
-<pre>This is a preformatted block. We both know that you're pretty awesome.
-Why not have a fancy site for your code? You = Awesome. Your code =
-Awesome. So much awesome in one place.</pre>
+<pre>This is a preformatted block. It now has a new frame,
+and the font-size has been tweaked to fit in.
+Put &lt;code&gt; in it and it becomes a code block:</pre>
 
         <h5 class="header-level-5">HighlightJS Support</h5>
 
-<pre><code class="lang-js">$(<span class="hljs-string">'.avatars'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'img[alt]'</span>).tip(); <span class="hljs-comment">// Tips will follow cursor.</span>
-$(<span class="hljs-string">'nav.bar'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'a[title]'</span>).snapTip({
-  snap: { toXAxis: <span class="hljs-keyword">true</span> } <span class="hljs-comment">// Tips will only follow along x axis.</span>
+<pre><code class="lang-js"><span class="hljs-comment">// This is a code block output from HighlightJS.
+// Code blocks did not previously support HighlightJS.</span>
+$(<span class="hljs-string">'.awesomes'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'img[alt]'</span>).tip(); <span class="hljs-comment">// This is some explanatory comment.</span>
+$(<span class="hljs-string">'nav.awesome'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'a[title]'</span>).snapTip({
+  snap: { toXAxis: <span class="hljs-keyword">true</span> } <span class="hljs-comment">// This is some explanatory comment</span>
 });
-$(<span class="hljs-string">'article'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'a[title]'</span>).snapTip() <span class="hljs-comment">// Tip will not follow.</span>
+$(<span class="hljs-string">'x-awesome'</span>).<span class="hljs-keyword">find</span>(<span class="hljs-string">'a[title]'</span>).snapTip() <span class="hljs-comment">// This is some explanatory comment.</span>
 </code></pre>
 
         <h3 class="header-level-3">Lists</h3>
 
         <h5 class="header-level-5">Unordered</h5>
         <ul>
-          <li>We both know that you're pretty awesome.</li>
-          <li>Why not have a fancy site for your code?</li>
-          <li>So much awesome in one place.</li>
+          <li>Lists remain mostly the same.</li>
+          <li>
+            One change is top-level list items no longer get indented.
+            <ul>
+              <li>This should save some precious space in this relatively narrow layout.</li>
+            </ul>
+          </li>
+          <li>The chevron remains an image, so new colors mean image editing.</li>
         </ul>
 
         <h5 class="header-level-5">Ordered</h5>
         <ol>
-          <li>We both know that you're pretty awesome.</li>
-          <li>Why not have a fancy site for your code?</li>
-          <li>So much awesome in one place.</li>
+          <li>Vendor-prefixing is now handled by Autoprefixer.</li>
+          <li>When possible, the remaining styles have been heavily refactored into Sass code.</li>
         </ol>
 
         <h5 class="header-level-5">Definitions</h5>
@@ -106,7 +128,10 @@ $(<span class="hljs-string">'article'</span>).<span class="hljs-keyword">find</s
         </dl>
 
         <h3 class="header-level-3">Tables</h3>
-
+        <p>
+          Tables now have more spacing. They now blend into the content with
+          slightly darker borders. Support for row-groups has also been fixed.
+        </p>
         <table>
           <thead>
             <tr><th>Thing</th><th>Color</th></tr>
@@ -122,7 +147,11 @@ $(<span class="hljs-string">'article'</span>).<span class="hljs-keyword">find</s
         </table>
 
         <h3 class="header-level-3">Images</h3>
-
+        <p>
+          Images now have a new frame. Their <code>max-width</code> has been
+          fixed. And they now have a default background color for transparent
+          images.
+        </p>
         <img src="https://octodex.github.com/images/front-end-conftocat.png"
              alt="Front-End Conftocat by tonyjaramillo, cameronmcefee"
              title="Front-End Conftocat by tonyjaramillo, cameronmcefee">
@@ -130,15 +159,20 @@ $(<span class="hljs-string">'article'</span>).<span class="hljs-keyword">find</s
         <hr>
 
         <h6 class="header-level-6">A Small Conclusion</h6>
-
-        <p><small>Use this repo to build your own page, or generate one with <a href="http://pages.github.com">GitHub Pages</a>.</small></p>
+        <p>
+          As always, you can use this repo to build your own page, or generate
+          one with <a href="http://pages.github.com">GitHub Pages</a>.
+        </p>
 
       </section>
 
       <footer>
         <div class="ribbon-outer">
           <div class="ribbon-inner">
-            <p>this project by <a href="#">Someone Awesome</a> can be found on <a href="#">GitHub</a></p>
+            <p>
+              this fork by <a href="http://github.com/hlfcoding">hlfcoding</a>
+              can be found on <a href="http://github.com/hlfcoding/merlot">GitHub</a>
+            </p>
           </div>
           <div class="left-tail" role="presentation"></div>
           <div class="right-tail" role="presentation"></div>
