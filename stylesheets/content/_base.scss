@@ -1,14 +1,33 @@
 @import '../shared';
 
+// lines, shadows
+$shadow-color: rgba($canvas-color-dark-0, 0.5);
+$line-weight: 2px;
+$line-color: $shadow-color;
+$framed-box-shadow: 0 0 0 1px $canvas-color-light-2,
+                    inset 0 0 0 $line-weight $shadow-color;
+
+// spacing
+$base-line-height: 1.5;
+
+$x-spacing-1: 0.666rem;
+$x-spacing-2: 1rem;
+$x-spacing-3: 1.333rem;
+$x-spacing-4: 0.333rem;
+
+$y-spacing-1: 0.666rem;
+$y-spacing-2: 1rem;
+$y-spacing-3: 1.333rem;
+
 /* base content */
 
-$shadow-color: rgba($canvas-color-dark-0, 0.5);
-$framed-box-shadow: 0 0 0 1px $canvas-color-light-2,
-                    inset 0 0 0 2px $shadow-color;
+html {
+  font: normal normal #{$full-font-size}/#{$base-line-height} #{$font-family-2};
+}
 
 body {
   color: $canvas-color-dark-3;
-  font: normal normal 15px/1.5 #{$font-family-2};
+  font: inherit;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -35,20 +54,20 @@ em {
 }
 
 p {
-  margin: 0.7em 0;
+  margin: $y-spacing-1 0;
 }
 
 ol {
   list-style-type: decimal;
-  margin: 0.7em 0;
-  padding-left: 1.35em;
+  margin: $y-spacing-1 0;
+  padding-left: $x-spacing-3;
 }
 ul {
-  margin: 0.7em 0;
+  margin: $y-spacing-1 0;
   li {
-    background: transparent url(../images/chevron.png) left 6px no-repeat;
-    background-size: 7px 9px;  
-    padding-left: 1.35em;
+    background: transparent url(../images/chevron.png) 3px 6px no-repeat;
+    background-size: 7px 9px;
+    padding-left: $x-spacing-3;
   }
 }
 
@@ -57,8 +76,8 @@ blockquote {
   background-size: 17px 13px;
   color: $canvas-color-dark-2;
   font-family: $font-family-1;
-  margin: 20px 0;
-  padding-left: 1.35em;
+  margin: $y-spacing-3 0;
+  padding-left: $x-spacing-3;
 }
 
 img {
@@ -73,16 +92,18 @@ hr {
   background-size: auto $height;
   border: 0;
   height: $height;
-  margin: 20px 0;
+  margin: $y-spacing-3 0;
   outline: none;
 }
 
+code, pre {
+  font: normal normal #{$full-font-size-monospace}/#{$base-line-height + 0.2} #{$font-family-3};
+}
 code {
   background: $canvas-color-light-1;
   border-radius: 2px;
   box-shadow: 0 0 0 1px $shadow-color;
-  font: normal normal .8em/1.7 #{$font-family-3};
-  padding: 1px 5px;
+  padding: 1px $x-spacing-4;
   /* reset */
   pre & {
     background: transparent;
@@ -90,26 +111,21 @@ code {
     padding: 0;
   }
 }
-
 pre {
   background: $canvas-color-light-1;
   box-shadow: $framed-box-shadow;
-  font: normal normal .9em/1.7 #{$font-family-3};
-  margin: 10px 0 20px;
+  margin: $y-spacing-1 0 $y-spacing-3;
   overflow: auto;
-  padding: 0.7em 1em;
+  padding: $y-spacing-1 1em;
 }
-
-$table-line-width: 2px;
-$table-line-color: $shadow-color;
 
 table {
   border: {
-    top: $table-line-width solid $table-line-color;
+    top: $line-weight solid $line-color;
     collapse: separate;
   }
   display: table;
-  margin: 10px 0;
+  margin: $y-spacing-1 0;
   width: 100%;
 }
 tr {
@@ -117,20 +133,17 @@ tr {
 }
 th, td {
   border: {
+    color: $line-color;
     style: solid;
-    color: $table-line-color;
-    width: 0 $table-line-width $table-line-width 0;
+    width: 0 $line-weight $line-weight 0;
   }
+  display: table-cell;
+  line-height: 1.5rem;
+  padding: $x-spacing-4 $x-spacing-1;
 }
 th {
   color: $accent-color-1-light-1;
-  display: table-cell;
   font: { family: $font-family-1; size: 0.85em; weight: bold; }
-  padding: 2px 10px;
-}
-td {
-  display: table-cell;
-  padding: 0 0.7em;
 }
 td:last-child, th:last-child {
   border-right: none;
@@ -142,13 +155,13 @@ table > tr:last-child {
 }
 
 dl {
-  margin: 0.7em 0 20px;
+  margin: $y-spacing-1 0 $y-spacing-3;
 }
 dt {
   font: { family: $font-family-1; weight: bold; }
 }
 dd {
-  padding-left: 1.35em;
+  padding-left: $x-spacing-3;
 }
 dd p:first-child {
   margin-top: 0;
