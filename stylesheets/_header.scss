@@ -154,9 +154,9 @@ section#main_content {
   background-image: linear-gradient(to bottom,
     $canvas-color-light-1 200px,
     $canvas-color 80%,
-    $canvas-color-dark-0
+    lighten($canvas-color-dark-0, 2%)
   );
-  box-shadow: 0 -2px 1px 1px $canvas-color-dark-1;
+  box-shadow: 0 -2px 0 2px $canvas-color-dark-0;
   box-sizing: border-box;
   margin: { top: -215px; bottom: -245px; }
   margin: { left: auto; right: auto; }

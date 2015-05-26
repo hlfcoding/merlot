@@ -26,7 +26,7 @@
   @extend %badge-container;
   border-bottom: .2em double $canvas-color-dark-0;
   color: $accent-color-1;
-  font: { size: 1.85em; style: italic; }
+  font-size: 1.85em;
   line-height: 1.2;
   margin: 1.1em 0 .38em;
   padding-bottom: 10px;
@@ -61,6 +61,6 @@
 }
 
 .header-level-6 {
-  font: { size: .85em; style: italic; }
+  font-size: .85em;
   margin: .8em 0;
 }
