@@ -155,8 +155,16 @@ dd p:first-child {
   margin-top: 0;
 }
 
-@include retina {
+@include mobile {
+  html {
+    font-size: $mobile-font-size;
+  }
+  code, pre {
+    font-size: $mobile-font-size-monospace;
+  }
+}
 
+@include retina {
   ul li {
     background-image: url(../images/chevron-2x.png);
   }
