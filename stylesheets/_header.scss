@@ -58,7 +58,7 @@ header {
                         $backface-hint-y-offset: 16px);
   position: relative;
   text-align: center;
-  top: 2.533rem;
+  top: 3rem;
   z-index: 3;
   > .ribbon-outer {
     @extend %clearfix;
@@ -80,13 +80,12 @@ header {
     color: $canvas-color;
     font: { size: 2.5rem; weight: 800; }
     line-height: 1;
-    padding: $y-spacing-2 $x-spacing-3 0;
+    padding: $y-spacing-3 $x-spacing-3 0;
     text-transform: uppercase;
   }
   h2 {
     color: $accent-color-1-light-2;
-    font: bold italic #{round(0.8 * $full-font-size)}/#{$base-line-height} #{$font-family-2};
-    margin-top: -3px;
+    font: italic #{$full-font-size}/#{$base-line-height} #{$font-family-2};
     padding-bottom: $y-spacing-2;
   }
 }
@@ -96,7 +95,8 @@ section#downloads {
   $tail-height: 30px;
   $tail-pull: $shadow-offset - $tail-height;
   background: $shadow-color;
-  margin: { top: -5.333rem; bottom: $y-spacing-1; } // magic
+  margin: { top: -5.666rem; bottom: $y-spacing-1; } // magic
+  @include mobile { margin-top: -6rem; }
   padding-bottom: $shadow-offset;
   position: relative;
   text-align: center;
@@ -126,7 +126,8 @@ section#downloads {
     display: inline-block;
     font: { family: #{$font-family-1}; size: 1.333rem; weight: 800; }
     line-height: 1;
-    padding-top: 9rem; // magic
+    padding-top: 9.666rem; // magic
+    @include mobile { padding-top: 10rem; }
     width: 50%;
     &:focus {
       outline: none;
@@ -138,15 +139,15 @@ section#downloads {
     }
     em {
       display: block;
-      font: bold italic #{round(0.8 * $full-font-size)}/1 #{$font-family-2};
-      margin-bottom: 0.5em;
+      font: italic #{$full-font-size}/1 #{$font-family-2};
+      margin-bottom: 0.333em;
     }
   }
 }
 
 section#main_content {
   $bottom-pull-offset: 16.333rem;
-  $top-pull-offset: 15rem;
+  $top-pull-offset: 16.333rem;
   background-image: linear-gradient(to bottom,
     $canvas-color-light-1 13.333rem,
     $canvas-color 80%,
