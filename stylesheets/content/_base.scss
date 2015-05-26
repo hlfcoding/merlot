@@ -31,16 +31,16 @@ em {
 }
 
 p {
-  margin: .7em 0;
+  margin: 0.7em 0;
 }
 
 ol {
   list-style-type: decimal;
-  margin: .7em 0;
+  margin: 0.7em 0;
   padding-left: 1.35em;
 }
 ul {
-  margin: .7em 0;
+  margin: 0.7em 0;
   li {
     background: transparent url(../images/chevron.png) left 6px no-repeat;
     background-size: 7px 9px;  
@@ -110,7 +110,7 @@ th {
   }
   color: $accent-color-1-light-1;
   display: table-cell;
-  font: { family: $font-family-1; size: .85em; weight: bold; }
+  font: { family: $font-family-1; size: 0.85em; weight: bold; }
   padding: 2px 10px;
 }
 td {
@@ -120,7 +120,7 @@ td {
     width: 0 2px 2px 0;
   }
   display: table-cell;
-  padding: 0 .7em;
+  padding: 0 0.7em;
 }
 td:last-child, th:last-child {
   border-right: none;
@@ -132,7 +132,7 @@ table > tr:last-child {
 }
 
 dl {
-  margin: .7em 0 20px;
+  margin: 0.7em 0 20px;
 }
 dt {
   font: { family: $font-family-1; weight: bold; }
