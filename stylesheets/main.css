@@ -108,7 +108,7 @@ a#forkme_banner {
   height: 138px;
   z-index: 4; }
   a#forkme_banner:hover {
-    background-position: -138px; }
+    background-position: 0 -138px; }
 
 @media screen and (min-width: 800px) {
   div.shell {

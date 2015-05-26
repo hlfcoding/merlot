@@ -24,7 +24,7 @@ a#forkme_banner {
   width: $size; height: $size;
   z-index: 4;
   &:hover {
-    background-position: 0 -$size;
+    background-position: 0 (-$size);
   }
 }
 
