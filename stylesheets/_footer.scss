@@ -2,142 +2,104 @@
 
 /* footer */
 
+$shadow-offset: 2px;
+$ribbon-gutter-width: 114px;
+$ribbon-less-gutter-width: 44px;
+
 footer {
-  margin: -94px auto 40px;
-  padding-top: 104px;
+  @include ribbon-tails($height: 29px, $width: 18px, $shadow-offset: $shadow-offset,
+                        $backface-hint-size: 8px, $backface-hint-x-offset: 4px,
+                        $backface-hint-y-offset: 5px,
+                        $from-angle: top);
+  padding-top: 4rem;
   text-align: center;
-  span.ribbon-outer {
-    border-bottom: 2px solid $canvas-color-dark-1;
-    display: block;
+  z-index: 5;
+  .ribbon-outer {
+    border-bottom: $shadow-offset solid $canvas-color-dark-2;
     position: relative;
   }
-  span.ribbon-inner {
-    background-color: $accent-color-1-light-1;
-    border: { style: solid; color: $accent-color-1; }
-    display: block;
+  .ribbon-inner {
+    $inner-border-width: 1px;
+    $inner-border-margin: 2px;
+    $padding: $inner-border-width + $inner-border-margin;
+    background-color: $accent-color-1;
+    box-shadow: inset 0 0 0 $inner-border-margin $accent-color-1,
+                inset 0 0 0 $padding $accent-color-1-light-1;
+    padding: $padding;
     position: relative;
     z-index: 1;
   }
   p {
-    color: $accent-color-2-light-2;
-    font: { family: $font-family-1; weight: bold; }
+    color: $accent-color-2-light-3;
+    font: bold 0.8em $font-family-1;
+    padding: { left: $x-spacing-2; right: $x-spacing-2; }
   }
-  span.ribbon-inner p {
-    background-color: $accent-color-1;
+  > p {
+    margin: { top: $y-spacing-3; bottom: $y-spacing-3; }
+  }
+  .ribbon-inner p {
     color: $accent-color-1-light-2;
+    font: bold italic #{round(0.8 * $full-font-size)}/1 $font-family-2;
     margin: 0;
+    padding: { top: 3px; bottom: 4px; }
   }
   a {
     color: $accent-color-1-light-1;
   }
-  span.ribbon-inner a {
-    color: $accent-color-2-light-1;
-    font: { family: $font-family-1; style: normal; weight: bolder; }
+  .ribbon-inner a {
+    bottom: -1px;
+    color: $accent-color-2-light-2;
+    font: normal 800 round(0.9 * $full-font-size) $font-family-1;
     position: relative;
     text-transform: uppercase;
     &:hover {
-      color: $accent-color-2-light-1;
+      color: $accent-color-2-light-2;
     }
   }
-  span.left-tail, span.right-tail {
-    display: block;
-    position: absolute;
-    z-index: 0;
-  }
-  span.octocat {
-    background: { color: transparent; position: 0 0; repeat: no-repeat; }    
-    display: block;
+  .octocat {
+    $size: 30px;
+    background: url(../images/octocat.png) no-repeat;
+    background-size: cover;
+    width: $size;
+    height: $size;
+    margin: 0 auto;
   }
 }
 
 @include desktop {
-
   footer {
-    background: transparent url(../images/footer-ramp.jpg) center -1px no-repeat;
-    max-width: 560px;
-    span.ribbon-inner {
-      border-width: 2px;
-      padding: 1px;
-      a {
-        bottom: -1px;
-        font-size: 1.2em;
-      }
-    } 
-    p {
-      font-size: .8em;
-    }
-    span.ribbon-inner p {
-      font: bold italic 12px/1 #{$font-family-2};
-      padding-bottom: 4px;
-    }
-    span.left-tail, span.right-tail {
-      background: transparent url(../images/small-ribbon-tail-sprite.png) 0 0 no-repeat;
-      bottom: 5px;
-      height: 29px;
-      width: 18px;
-    }
-    span.left-tail {
-      background-position: 0 0;
-      left: -11px;
-    }
-    span.right-tail {
-      background-position: -18px 0;
-      right: -11px;
-    }
-    span.octocat {
-      background-image: url(../images/octocat.png);
-      width: 30px;
-      height: 30px;
-      margin: 0 auto;
-    }
+    width: $desktop-wrapper-width - $ribbon-gutter-width;
   }
-
 }
 
-@include mobile {
-
+@include tablet {
   footer {
-    background: none;
-    max-width: $mobile-wrapper-width;
-    span.ribbon-inner {
-      border-width: 8px;
-      padding: 6px;
-    }
-    p {
-      font-size: .6em;
-    }
-    span.ribbon-inner p {
-      font: bold italic 22px/1 #{$font-family-2};
-      height: auto;
-      line-height: 1.1;
-      padding: 20px 0px 10px;
-    }
-    span.ribbon-inner a {
-      bottom: 0;
-      display: block;
-      font-size: 38px;
-      padding-bottom: 10px;
-    }
-    span.left-tail, span.right-tail {
-      background: transparent url(../images/small-ribbon-tail-sprite-2x.png) 0 0 no-repeat;
-      height: 126px;
-      top: -126px;
-      width: 23px;
-    }
-    span.left-tail {
-      background-position: 0 0;
-      left: 0;
-    }
-    span.right-tail {
-      background-position: -23px 0;
-      right: 0;
-    }
-    span.octocat {
+    width: $tablet-wrapper-width - $ribbon-gutter-width;
+  }
+}
+
+@include phablet {
+  footer {
+    width: $phablet-wrapper-width - $ribbon-less-gutter-width;
+  }
+}
+
+@include phone {
+  footer {
+    width: $phone-wrapper-width - $ribbon-less-gutter-width;
+  }
+}
+
+@include pod {
+  footer {
+    width: $pod-wrapper-width - $ribbon-less-gutter-width;
+  }
+}
+
+@include retina {
+  footer {
+    .octocat {
       background-image: url(../images/octocat-2x.png);
-      height: 60px;
-      margin: 20px auto 0;
-      width: 60px;
     }
   }
-  
 }

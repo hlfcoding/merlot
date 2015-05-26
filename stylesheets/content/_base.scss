@@ -1,10 +1,21 @@
 @import '../shared';
 
+// lines, shadows
+$shadow-color: rgba($canvas-color-dark-1, 0.5);
+$line-weight: 2px;
+$line-color: $shadow-color;
+$framed-box-shadow: 0 0 0 1px rgba($canvas-color-light-2, 0.8),
+                    inset 0 0 0 $line-weight $shadow-color;
+
 /* base content */
 
+html {
+  font: normal normal #{$full-font-size}/#{$base-line-height} #{$font-family-2};
+}
+
 body {
-  background: $canvas-color;
-  color: $canvas-color-dark-3;
+  color: $canvas-color-dark-4;
+  font: inherit;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -30,178 +41,137 @@ em {
   font-style: italic;
 }
 
-ol {
-  list-style-type: decimal;
-  margin: .7em 0;
-  padding-left: 1.35em;
+p {
+  margin: $y-spacing-1 0;
 }
 
+ol {
+  list-style-type: decimal;
+  margin: $y-spacing-1 0;
+  padding-left: $x-spacing-3;
+}
 ul {
-  margin: .7em 0;
-  padding-left: 1.35em;
+  margin: $y-spacing-1 0;
+  li {
+    background: transparent url(../images/chevron.png) 3px 6px no-repeat;
+    background-size: 7px 9px;
+    padding-left: $x-spacing-3;
+  }
 }
 
 blockquote {
-  color: $canvas-color-dark-2;
+  background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
+  background-size: 1.133rem 0.866rem;
+  color: $canvas-color-dark-3;
   font-family: $font-family-1;
-  margin: 20px 0;
-  padding-left: 1.35em;
+  margin: $y-spacing-3 0;
+  padding-left: $x-spacing-3;
+}
+
+img {
+  background: $canvas-color;
+  box-shadow: $framed-box-shadow;
+  max-width: 100%;
 }
 
 hr {
-  background: { color: transparent; position: center center; repeat: repeat-x; }
-  border: none;
-  margin: 0 0 20px;
+  $height: 18px;
+  background: transparent url(../images/hr.png) center repeat-x;
+  background-size: auto $height;
+  border: 0;
+  height: $height;
+  margin: $y-spacing-3 0;
   outline: none;
 }
 
+code, pre {
+  font: normal normal #{$full-font-size-monospace}/#{$base-line-height + 0.2} #{$font-family-3};
+}
 code {
   background: $canvas-color-light-1;
-  font: normal normal .8em/1.7 #{$font-family-3};
-  padding: 0 5px 1px;
-  pre & { padding: 0; }
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px $shadow-color;
+  padding: 1px $x-spacing-thin-1;
+  /* reset */
+  pre & {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
 }
-
 pre {
   background: $canvas-color-light-1;
-  border-bottom: { style: solid; color: $canvas-color-dark-1; }
-  font: normal normal .9em/1.7 #{$font-family-3};
-  margin: 10px 0 20px;
+  box-shadow: $framed-box-shadow;
+  margin: $y-spacing-1 0 $y-spacing-3;
   overflow: auto;
-  padding: .7em;
+  padding: $y-spacing-1 1em;
 }
 
 table {
-  background: $canvas-color-light-1;
-  border-bottom: { style: solid; color: $canvas-color-dark-1; }
-  border-collapse: separate;
+  border: {
+    top: $line-weight solid $line-color;
+    collapse: separate;
+  }
   display: table;
-  margin: 10px 0;
+  margin: $y-spacing-1 0;
   width: 100%;
 }
 tr {
   display: table-row;
 }
-th {
-  border: { style: solid; color: $canvas-color; }
-  color: $accent-color-1-light-1;
+th, td {
+  border: {
+    color: $line-color;
+    style: solid;
+    width: 0 $line-weight $line-weight 0;
+  }
   display: table-cell;
-  font: { family: $font-family-1; size: .85em; weight: bold; }
-  padding: 2px 10px;  
+  line-height: 1.5rem;
+  padding: $x-spacing-thin-1 $x-spacing-1;
 }
-td {
-  border: { style: solid; color: $canvas-color; }
-  display: table-cell;
-  padding: 0 .7em;
+th {
+  color: $accent-color-1-light-1;
+  font: { family: $font-family-1; size: 0.85em; weight: bold; }
 }
 td:last-child, th:last-child {
   border-right: none;
 }
-tr:last-child td {
-  border-bottom: none;
+table > tr:last-child {
+  th, td {
+    border-bottom: none;
+  }
 }
 
 dl {
-  margin: .7em 0 20px;
+  margin: $y-spacing-1 0 $y-spacing-3;
 }
 dt {
   font: { family: $font-family-1; weight: bold; }
 }
 dd {
-  padding-left: 1.35em;
+  padding-left: $x-spacing-3;
 }
 dd p:first-child {
   margin-top: 0;
 }
 
-@include desktop {
-
-  body {
-    font: normal normal 15px/1.5 #{$font-family-2};
+@include mobile {
+  html {
+    font-size: $mobile-font-size;
   }
-
-  p {
-    margin: .7em 0;
+  code, pre {
+    font-size: $mobile-font-size-monospace;
   }
-
-  ul  li {
-    background: transparent url(../images/chevron.png) left 6px no-repeat;
-    padding-left: 10px;
-  }
-
-  blockquote {
-    background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
-  }
-
-  img {
-    border: 2px solid $canvas-color-light-1;
-    box-shadow: 0px 2px 0px $canvas-color-dark-1;
-    max-width: 502px;
-  }
-
-  hr {
-    background-image: url(../images/hr.jpg);
-    height: 18px;
-  }
-
-  pre {
-    border-bottom-width: 2px;
-  }
-
-  table {
-    border-bottom-width: 2px;
-  }
-  th {
-    border-width: 0 2px 2px 0;
-  }
-  td {
-    border-width: 0 2px 2px 0;
-  }
-
 }
 
-@include mobile {
-
-  body {
-    font: normal normal 30px/1.5 #{$font-family-2};
-  }
-
-  p {
-    margin: .7em 0 0;
-  }
-
+@include retina {
   ul li {
-    background: transparent url(../images/chevron-2x.png) left 15px no-repeat;
-    padding-left: 20px;
+    background-image: url(../images/chevron-2x.png);
   }
-
   blockquote {
-    background: transparent url(../images/blockquote-gfx-2x.png) 0 8px no-repeat;
+    background-image: url(../images/blockquote-gfx-2x.png);
   }
-
-  img {
-    box-shadow: 0px 4px 0px $canvas-color-dark-1;
-    border: 4px solid $canvas-color-light-1;
-    max-width: 556px;
-  }
-
   hr {
-    background-image: url(../images/hr-2x.jpg);
-    height: 42px;
+    background-image: url(../images/hr-2x.png);
   }
-
-  pre {
-    border-bottom-width: 4px;
-  }
-
-  table {
-    border-bottom-width: 4px;
-  }
-  th {
-    border-width: 0 4px 4px 0;
-  }
-  td {
-    border-width: 0 4px 4px 0;
-  }
-
 }

@@ -2,42 +2,64 @@
 
 /* wrapper */
 
+body {
+  background-color: $canvas-color;
+}
+
 div.shell {
-  display: block;
-  margin: 0 auto;
+  &,
+  > header,
+  > section,
+  > footer {
+    margin: { left: auto; right: auto; }
+  }
 }
 
 a#forkme_banner {
+  $size: 138px;
   background: transparent url(../images/fork-sprite.png) 0 0 no-repeat;
   display: block;
-  height: 138px;
-  left: 0;
-  position: absolute;
-  text-indent: -9000px;
-  top: 0;
-  width: 138px;
-  z-index: 3;
+  position: absolute; top: 0; left: 0;
+  text-indent: -9000px;  
+  width: $size; height: $size;
+  z-index: 4;
   &:hover {
-    background-position: 0 -138px;
+    background-position: 0 -$size;
   }
 }
 
 @include desktop {
-
   div.shell {
-    width: $full-wrapper-width;
+    width: $desktop-wrapper-width;
   }
+}
 
+@include tablet {
+  div.shell {
+    width: $tablet-wrapper-width;
+  }
+}
+
+@include phablet {
+  div.shell {
+    width: $phablet-wrapper-width;
+  }
+}
+
+@include phone {
+  div.shell {
+    width: $phone-wrapper-width;
+  }
+}
+
+@include pod {
+  div.shell {
+    width: $pod-wrapper-width;
+  }
 }
 
 @include mobile {
-
-  div.shell {
-    width: $mobile-wrapper-width;
-  }
-
   a#forkme_banner {
     display: none;
   }
-
 }
