@@ -10,13 +10,12 @@ $framed-box-shadow: 0 0 0 1px rgba($canvas-color-light-2, 0.8),
 /* base content */
 
 html {
-  font: normal normal #{$full-font-size}/#{$base-line-height} #{$font-family-2};
+  font: normal normal #{$full-font-size}/#{$base-line-height} #{$font-family-1};
 }
 
 body {
   color: $canvas-color-dark-4;
   font: inherit;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -30,11 +29,11 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font: { family: $font-family-1; weight: bold; }
+  font: { family: $font-family-1; weight: 700; }
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 em {
@@ -131,7 +130,7 @@ th, td {
 }
 th {
   color: $accent-color-1-light-1;
-  font: { family: $font-family-1; size: 0.85em; weight: bold; }
+  font: { family: $font-family-1; size: 0.85em; weight: 700; }
 }
 td:last-child, th:last-child {
   border-right: none;
@@ -146,7 +145,7 @@ dl {
   margin: $y-spacing-1 0 $y-spacing-3;
 }
 dt {
-  font: { family: $font-family-1; weight: bold; }
+  font: { family: $font-family-1; weight: 700; }
 }
 dd {
   padding-left: $x-spacing-3;

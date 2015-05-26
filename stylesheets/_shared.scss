@@ -22,10 +22,10 @@ $canvas-color-light-2: #fffff3;
 
 // font sizes
 $base-line-height: 1.5;
-$full-font-size: 15px;
-$full-font-size-monospace: 12px;
-$mobile-font-size: 13px;
-$mobile-font-size-monospace: 11px;
+$full-font-size: 14px;
+$full-font-size-monospace: 14px;
+$mobile-font-size: 12px;
+$mobile-font-size-monospace: 12px;
 
 // layout sizes
 $pod-wrapper-width: 320px; // iPhone 5; running out of names, I guess this size
@@ -46,11 +46,11 @@ $y-spacing-2: 1rem;
 $y-spacing-3: 1.333rem;
 
 // headline font
-$font-family-1: 'Open Sans', Myriad, Calibri, sans-serif;
+$font-family-1: 'Merriweather Sans', Myriad, Calibri, sans-serif;
 // caption font
-$font-family-2: Georgia, Times, 'Times New Roman', serif;
+$font-family-2: 'Gentium Book Basic', Georgia, Times, 'Times New Roman', serif;
 // monospace font
-$font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
+$font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', monospace;
 
 %clearfix {
   &:before, &:after { content: ' '; display: table; }
