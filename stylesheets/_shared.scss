@@ -20,6 +20,11 @@ $canvas-color-dark-3: #544943;
 $canvas-color-light-1: #fff6e9;
 $canvas-color-light-2: #fffff3;
 
+// font sizes
+$base-line-height: 1.5;
+$full-font-size: 15px;
+$full-font-size-monospace: 12px;
+
 // layout sizes
 $full-wrapper-width: 800px;
 
@@ -30,8 +35,15 @@ $phablet-wrapper-width: 414px; // iPhone 6+
 $tablet-wrapper-width: 600px; // Nexus 7
 $desktop-wrapper-width: $full-wrapper-width;
 
-$full-font-size: 15px;
-$full-font-size-monospace: 12px;
+// spacing sizes
+$x-spacing-1: 0.666rem;
+$x-spacing-2: 1rem;
+$x-spacing-3: 1.333rem;
+$x-spacing-4: 0.333rem;
+
+$y-spacing-1: 0.666rem;
+$y-spacing-2: 1rem;
+$y-spacing-3: 1.333rem;
 
 // headline font
 $font-family-1: 'Open Sans', Myriad, Calibri, sans-serif;
@@ -61,7 +73,6 @@ $font-family-3: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream V
       style: solid;
       top-width: round($height / 2); bottom-width: round($height / 2);
     }
-    display: block;
     position: absolute;
     width: 0; height: 0;
     z-index: 0;

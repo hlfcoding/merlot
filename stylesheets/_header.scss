@@ -28,9 +28,7 @@ $content-pod-width: $pod-wrapper-width - $content-gutter-width-no-ribbon;
   position: absolute;
   left: 0; right: 0; margin: { left: auto; right: auto; }
   width: 0; height: 0;
-  border: {
-    style: solid; color: transparent;
-  }
+  border: { color: transparent; style: solid; }
   @include desktop {
     $width: $downloads-desktop-width / 2;
     border: { left-width: $width; right-width: $width; }
@@ -54,62 +52,60 @@ $content-pod-width: $pod-wrapper-width - $content-gutter-width-no-ribbon;
 }
 
 header {
-  /* base */
+  $backface-hint-size: 25px;
   @include ribbon-tails($height: 105px, $width: 56px, $shadow-offset: $shadow-offset,
-                        $backface-hint-size: 25px, $backface-hint-x-offset: 12px,
+                        $backface-hint-size: $backface-hint-size, $backface-hint-x-offset: 12px,
                         $backface-hint-y-offset: 16px);
-  margin: 0 auto;
   position: relative;
-  top: 38px;
+  text-align: center;
+  top: 2.533rem;
   z-index: 3;
   > .ribbon-outer {
     @extend %clearfix;
-    display: block;
   }
   .ribbon-inner {
-    background-color: $accent-color-1-light-1;
-    border: 4px solid $accent-color-1;
-    box-shadow: 0 30px 0 -25px $accent-color-2-dark-1;
-    display: block;
-    padding: 2px;
+    $inner-border-width: 2px;
+    $inner-border-margin: 4px;
+    $padding: $inner-border-width + $inner-border-margin;
+    $y-offset: $backface-hint-size + $shadow-offset;
+    background-color: $accent-color-1;
+    box-shadow: inset 0 0 0 $inner-border-margin $accent-color-1,
+                inset 0 0 0 $padding $accent-color-1-light-1,
+                0 $y-offset 0 (-$backface-hint-size) $accent-color-2-dark-1;
+    padding: $padding;
     position: relative;
     z-index: 1;
   }
   h1 {
-    background-color: $accent-color-1;
     color: $canvas-color;
-    font: { size: 2.5em; style: normal; weight: 800; }
+    font: { size: 2.5rem; weight: 800; }
     line-height: 1;
-    padding: 14px 20px 0;
-    text-align: center;
+    padding: $y-spacing-2 $x-spacing-3 0;
     text-transform: uppercase;
   }
   h2 {
-    background-color: $accent-color-1;
     color: $accent-color-1-light-2;
-    font: bold italic .85em/1.5 #{$font-family-2};
+    font: bold italic #{round(0.8 * $full-font-size)}/#{$base-line-height} #{$font-family-2};
     margin-top: -3px;
-    padding-bottom: 14px;
-    text-align: center;
+    padding-bottom: $y-spacing-2;
   }
 }
 
 section#downloads {
-  /* base */
   $shadow-color: mix($canvas-color, $canvas-color-dark-0);
   $tail-height: 30px;
   $tail-pull: $shadow-offset - $tail-height;
   background: $shadow-color;
-  display: block;
-  margin: -80px auto 10px;
+  margin: { top: -5.333rem; bottom: $y-spacing-1; } // magic
   padding-bottom: $shadow-offset;
   position: relative;
+  text-align: center;
   z-index: 2;
   > .inner {
     $bg-color: $accent-color-2-light-0;
     $line-color: $accent-color-2-light-1;
     background-color: $bg-color;
-    padding-bottom: 10px;
+    padding-bottom: $y-spacing-1;
     > .tip {
       @extend %downloads-tail-tip;
       bottom: $tail-pull;
@@ -128,10 +124,9 @@ section#downloads {
     $color: $accent-color-2-light-3;
     color: $color;
     display: inline-block;
-    font: { family: #{$font-family-1}; size: 1.3em; weight: 800; }
+    font: { family: #{$font-family-1}; size: 1.333rem; weight: 800; }
     line-height: 1;
-    padding-top: 135px;
-    text-align: center;
+    padding-top: 9rem; // magic
     width: 50%;
     &:focus {
       outline: none;
@@ -143,25 +138,25 @@ section#downloads {
     }
     em {
       display: block;
-      font: bold italic 12px/1 #{$font-family-2};
+      font: bold italic #{round(0.8 * $full-font-size)}/1 #{$font-family-2};
       margin-bottom: 0.5em;
     }
   }
 }
 
 section#main_content {
-  /* base */
+  $bottom-pull-offset: 16.333rem;
+  $top-pull-offset: 15rem;
   background-image: linear-gradient(to bottom,
-    $canvas-color-light-1 200px,
+    $canvas-color-light-1 13.333rem,
     $canvas-color 80%,
     lighten($canvas-color-dark-0, 2%)
   );
-  box-shadow: 0 -2px 0 2px $canvas-color-dark-0;
+  box-shadow: 0 0 0 2px $canvas-color-dark-0;
   box-sizing: border-box;
-  margin: { top: -215px; bottom: -245px; }
-  margin: { left: auto; right: auto; }
-  min-height: 185px;
-  padding: 230px 20px 200px;
+  margin: { top: -$top-pull-offset; bottom: -$bottom-pull-offset; }
+  min-height: 12.333rem;
+  padding: ($top-pull-offset + $y-spacing-1) $x-spacing-2 ($bottom-pull-offset - 3rem);
   z-index: 1;
 }
 

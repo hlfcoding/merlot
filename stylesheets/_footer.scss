@@ -11,35 +11,35 @@ footer {
                         $backface-hint-size: 8px, $backface-hint-x-offset: 4px,
                         $backface-hint-y-offset: 5px,
                         $from-angle: top);
-  margin: 0 auto 40px;
-  padding-top: 60px;
+  padding-top: 4rem;
   text-align: center;
   z-index: 5;
   .ribbon-outer {
     border-bottom: $shadow-offset solid $canvas-color-dark-1;
-    display: block;
     position: relative;
   }
   .ribbon-inner {
-    background-color: $accent-color-1-light-1;
-    border: 2px solid $accent-color-1;
-    display: block;
-    padding: 1px;
+    $inner-border-width: 1px;
+    $inner-border-margin: 2px;
+    $padding: $inner-border-width + $inner-border-margin;
+    background-color: $accent-color-1;
+    box-shadow: inset 0 0 0 $inner-border-margin $accent-color-1,
+                inset 0 0 0 $padding $accent-color-1-light-1;
+    padding: $padding;
     position: relative;
     z-index: 1;
   }
   p {
     color: $accent-color-2-light-2;
     font: bold 0.8em $font-family-1;
-    padding: { left: 1em; right: 1em; }
+    padding: { left: $x-spacing-2; right: $x-spacing-2; }
   }
   > p {
-    margin: { top: 1.4em; bottom: 1.4em; }
+    margin: { top: $y-spacing-3; bottom: $y-spacing-3; }
   }
   .ribbon-inner p {
-    background-color: $accent-color-1;
     color: $accent-color-1-light-2;
-    font: bold italic 12px/1 #{$font-family-2};
+    font: bold italic #{round(0.8 * $full-font-size)}/1 $font-family-2;
     margin: 0;
     padding: { top: 3px; bottom: 4px; }
   }
@@ -49,7 +49,7 @@ footer {
   .ribbon-inner a {
     bottom: -1px;
     color: $accent-color-2-light-1;
-    font: normal 800 1.2em $font-family-1;
+    font: normal 800 round(0.9 * $full-font-size) $font-family-1;
     position: relative;
     text-transform: uppercase;
     &:hover {
@@ -60,7 +60,6 @@ footer {
     $size: 30px;
     background: url(../images/octocat.png) no-repeat;
     background-size: cover;
-    display: block;
     width: $size;
     height: $size;
     margin: 0 auto;

@@ -4,20 +4,8 @@
 $shadow-color: rgba($canvas-color-dark-0, 0.5);
 $line-weight: 2px;
 $line-color: $shadow-color;
-$framed-box-shadow: 0 0 0 1px $canvas-color-light-2,
+$framed-box-shadow: 0 0 0 1px rgba($canvas-color-light-2, 0.8),
                     inset 0 0 0 $line-weight $shadow-color;
-
-// spacing
-$base-line-height: 1.5;
-
-$x-spacing-1: 0.666rem;
-$x-spacing-2: 1rem;
-$x-spacing-3: 1.333rem;
-$x-spacing-4: 0.333rem;
-
-$y-spacing-1: 0.666rem;
-$y-spacing-2: 1rem;
-$y-spacing-3: 1.333rem;
 
 /* base content */
 
@@ -73,7 +61,7 @@ ul {
 
 blockquote {
   background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
-  background-size: 17px 13px;
+  background-size: 1.133rem 0.866rem;
   color: $canvas-color-dark-2;
   font-family: $font-family-1;
   margin: $y-spacing-3 0;
@@ -178,5 +166,4 @@ dd p:first-child {
   hr {
     background-image: url(../images/hr-2x.png);
   }
-
 }
