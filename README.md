@@ -2,7 +2,7 @@
 
 Merlot is a fancy page template for GitHub Pages. Want to use it for your own site? [Fork this repo](https://github.com/hlfcoding/merlot/fork) and add your own content.
 
-![screenshot](http://f.cl.ly/items/0Z061j1n293L3I1X350j/Screen%20Shot%202012-04-02%20at%2011.24.15%20AM.png)
+![screenshot](https://cloud.githubusercontent.com/assets/100884/7806198/d6117e96-0332-11e5-96fc-8000c568cba4.png)
 
 ### Sample ST2 Project File
 
