@@ -92,7 +92,7 @@ header {
 }
 
 section#downloads {
-  $shadow-color: mix($canvas-color, $canvas-color-dark-0);
+  $shadow-color: mix($canvas-color, $canvas-color-dark-1);
   $tail-height: 30px;
   $tail-pull: $shadow-offset - $tail-height;
   background: $shadow-color;
@@ -102,8 +102,8 @@ section#downloads {
   text-align: center;
   z-index: 2;
   > .inner {
-    $bg-color: $accent-color-2-light-0;
-    $line-color: $accent-color-2-light-1;
+    $bg-color: $accent-color-2-light-1;
+    $line-color: $accent-color-2-light-2;
     background-color: $bg-color;
     padding-bottom: $y-spacing-1;
     > .tip {
@@ -121,7 +121,7 @@ section#downloads {
     z-index: -2;
   }
   a {
-    $color: $accent-color-2-light-3;
+    $color: $accent-color-2-light-4;
     color: $color;
     display: inline-block;
     font: { family: #{$font-family-1}; size: 1.333rem; weight: 800; }
@@ -133,7 +133,7 @@ section#downloads {
     }
     &:hover {
       color: lighten($color, 10%);
-      background-image: linear-gradient(to bottom, $accent-color-2-dark-1, $accent-color-2-light-0);
+      background-image: linear-gradient(to bottom, $accent-color-2-dark-1, $accent-color-2-light-1);
       text-decoration: none;
     }
     em {
@@ -150,9 +150,9 @@ section#main_content {
   background-image: linear-gradient(to bottom,
     $canvas-color-light-1 13.333rem,
     $canvas-color 80%,
-    lighten($canvas-color-dark-0, 2%)
+    lighten($canvas-color-dark-1, 2%)
   );
-  box-shadow: 0 0 0 2px $canvas-color-dark-0;
+  box-shadow: 0 0 0 2px $canvas-color-dark-1;
   box-sizing: border-box;
   margin: { top: -$top-pull-offset; bottom: -$bottom-pull-offset; }
   min-height: 12.333rem;

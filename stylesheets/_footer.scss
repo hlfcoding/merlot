@@ -15,7 +15,7 @@ footer {
   text-align: center;
   z-index: 5;
   .ribbon-outer {
-    border-bottom: $shadow-offset solid $canvas-color-dark-1;
+    border-bottom: $shadow-offset solid $canvas-color-dark-2;
     position: relative;
   }
   .ribbon-inner {
@@ -30,7 +30,7 @@ footer {
     z-index: 1;
   }
   p {
-    color: $accent-color-2-light-2;
+    color: $accent-color-2-light-3;
     font: bold 0.8em $font-family-1;
     padding: { left: $x-spacing-2; right: $x-spacing-2; }
   }
@@ -48,12 +48,12 @@ footer {
   }
   .ribbon-inner a {
     bottom: -1px;
-    color: $accent-color-2-light-1;
+    color: $accent-color-2-light-2;
     font: normal 800 round(0.9 * $full-font-size) $font-family-1;
     position: relative;
     text-transform: uppercase;
     &:hover {
-      color: $accent-color-2-light-1;
+      color: $accent-color-2-light-2;
     }
   }
   .octocat {

@@ -24,7 +24,7 @@
 
 .header-level-1 {
   @extend %badge-container;
-  border-bottom: 0.2em double $canvas-color-dark-0;
+  border-bottom: 0.2em double $canvas-color-dark-1;
   color: $accent-color-1;
   font-size: 1.85rem;
   line-height: 1.2;
@@ -35,7 +35,7 @@
 
 .header-level-2 {
   @extend %badge-container;
-  border-bottom: 0.1em solid $canvas-color-dark-0;
+  border-bottom: 0.1em solid $canvas-color-dark-1;
   color: $accent-color-1;
   font-size: 1.58rem;
   line-height: 1.2;
@@ -55,7 +55,7 @@
 }
 
 .header-level-5 {
-  color: $accent-color-2-light-2;
+  color: $accent-color-2-light-3;
   font-size: 1rem;
   margin: 0.7em 0;
 }
