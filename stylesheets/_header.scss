@@ -158,6 +158,7 @@ section#main_content {
   margin: { top: -$top-pull-offset; bottom: -$bottom-pull-offset; }
   min-height: 12.333rem;
   padding: ($top-pull-offset + $y-spacing-1) $x-spacing-2 ($bottom-pull-offset - 3rem);
+  position: relative;
   z-index: 1;
 }
 

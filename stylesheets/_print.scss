@@ -2,7 +2,8 @@
 
 * {
   background: none !important;
-  color: #333 !important;
+  box-shadow: none !important;
+  color: $canvas-color-dark-4 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,13 +14,8 @@ a {
   color: $accent-color-2 !important;
 }
 
-#main_content > .header-level-1:first-child,
-#main_content > .header-level-2:first-child,
-#main_content > .header-level-3:first-child,
-#main_content > .header-level-4:first-child,
-#main_content > .header-level-5:first-child,
-#main_content > .header-level-6:first-child {
-  margin-top: 10px !important;
+hr {
+  border-bottom: 2px solid $canvas-color-dark-1;
 }
 
 #forkme_banner,
@@ -29,6 +25,6 @@ a {
   display: none !important;
 }
 
-.ribbon-inner,.ribbon-outer {
+.ribbon-inner, .ribbon-outer {
   border: 0 !important;
 }

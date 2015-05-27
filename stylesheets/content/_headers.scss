@@ -11,56 +11,47 @@
   }
 }
 
-#main-content {
-  > .header-level-1:first-child,
-  > .header-level-2:first-child,
-  > .header-level-3:first-child,
-  > .header-level-4:first-child,
-  > .header-level-5:first-child,
-  > .header-level-6:first-child {
-    margin-top: 0;
+#main_content {
+  h1 {
+    @extend %badge-container;
+    border-bottom: 0.2em double $canvas-color-dark-1;
+    color: $accent-color-1;
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin: 1.1em 0 0.38em;
+    padding-bottom: $y-spacing-1;
+    text-align: center;
   }
-}
 
-.header-level-1 {
-  @extend %badge-container;
-  border-bottom: 0.2em double $canvas-color-dark-1;
-  color: $accent-color-1;
-  font-size: 1.85rem;
-  line-height: 1.2;
-  margin: 1.1em 0 0.38em;
-  padding-bottom: $y-spacing-1;
-  text-align: center;
-}
+  h2 {
+    @extend %badge-container;
+    border-bottom: 0.1em solid $canvas-color-dark-1;
+    color: $accent-color-1;
+    font-size: 1.58rem;
+    line-height: 1.2;
+    margin: 0.95em 0 0.5em;
+    padding-bottom: $y-spacing-1
+  }
 
-.header-level-2 {
-  @extend %badge-container;
-  border-bottom: 0.1em solid $canvas-color-dark-1;
-  color: $accent-color-1;
-  font-size: 1.58rem;
-  line-height: 1.2;
-  margin: 0.95em 0 0.5em;
-  padding-bottom: $y-spacing-1
-}
+  h3 {
+    font-size: 1.45rem;
+    margin: $y-spacing-3 0 $y-spacing-1;
+  }
 
-.header-level-3 {
-  font-size: 1.45rem;
-  margin: $y-spacing-3 0 $y-spacing-1;
-}
+  h4 {
+    color: $accent-color-1-light-1;
+    font-size: 1.2rem;
+    margin: 0.6em 0;
+  }
 
-.header-level-4 {
-  color: $accent-color-1-light-1;
-  font-size: 1.2rem;
-  margin: 0.6em 0;
-}
+  h5 {
+    color: $accent-color-2-light-3;
+    font-size: 1rem;
+    margin: 0.7em 0;
+  }
 
-.header-level-5 {
-  color: $accent-color-2-light-3;
-  font-size: 1rem;
-  margin: 0.7em 0;
-}
-
-.header-level-6 {
-  font-size: 0.85rem;
-  margin: 0.8em 0;
+  h6 {
+    font-size: 0.85rem;
+    margin: 0.8em 0;
+  }
 }
