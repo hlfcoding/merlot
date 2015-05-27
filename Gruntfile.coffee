@@ -16,8 +16,9 @@ module.exports = (grunt) ->
 
     copy:
       lib:
-        src: 'node_modules/highlight.js/styles/solarized_light.css'
-        dest: 'stylesheets/content/_highlight-js.scss'
+        files:
+          'stylesheets/content/_highlight-js.scss': 'node_modules/highlight.js/styles/solarized_light.css'
+          'stylesheets/_reset.scss': 'bower_components/meyer-reset/stylesheets/_meyer-reset.scss'
 
     sass:
       stylesheets:
