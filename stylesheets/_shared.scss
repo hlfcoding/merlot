@@ -68,18 +68,28 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
   $x-offset: round($width * 0.55);
   $y-offset: round($height * 0.35);
   .left-tail, .right-tail {
-    border: {
-      color: transparent;
-      style: solid;
-      top-width: round($height / 2); bottom-width: round($height / 2);
-    }
     position: absolute;
-    width: 0; height: 0;
+    width: $width; height: $height;
     z-index: 0;
     @if $from-angle == bottom {
       bottom: -$y-offset;
     } @else if $from-angle == top {
       top: -$y-offset;
+    }
+    > .tip {
+      border: {
+        color: transparent;
+        style: solid;
+        top-width: round($height / 2); bottom-width: round($height / 2);
+      }
+      position: absolute; top: 0; left: 0;
+      &.animating {
+        animation: {
+          name: tail-bounce;
+          duration: 0.5s;
+          timing-function: linear;
+        }
+      }
     }
     /* backface depth hint */
     &:after {
@@ -103,11 +113,16 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
     }
   }
   .left-tail {
-    border: {
-      left-width: round($width / 3);
-      right-width: round($width * 2 / 3);
-    }
     left: -$x-offset;
+    > .tip {
+      border: {
+        left-width: round($width / 3);
+        right-width: round($width * 2 / 3);
+      }
+      &.animating {
+        transform-origin: right center;
+      }
+    }
     /* backface depth hint */
     &:after {
       border-left-color: transparent;
@@ -115,11 +130,16 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
     }
   }
   .right-tail {
-    border: {
-      left-width: round($width * 2 / 3);
-      right-width: round($width / 3);
-    }
     right: -$x-offset;
+    > .tip {
+      border: {
+        left-width: round($width * 2 / 3);
+        right-width: round($width / 3);
+      }
+      &.animating {
+        transform-origin: left center;
+      }
+    }
     /* backface depth hint */
     &:after {
       border-right-color: transparent;
@@ -128,16 +148,18 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
   }
   @include non-mobile {
     .left-tail, .right-tail {
-      background: {
-        color: $color;
-        clip: border-box; // be explicit
+      > .tip {      
+        background: {
+          color: $color;
+          clip: border-box; // be explicit
+        }
+        box-shadow: 0 $shadow-offset 0 $canvas-color-dark-2;
       }
-      box-shadow: 0 $shadow-offset 0 $canvas-color-dark-2;
     }
-    .left-tail {
+    .left-tail > .tip {
       border-left-color: $bg-color;
     }
-    .right-tail {
+    .right-tail > .tip {
       border-right-color: $bg-color;
     }
   }

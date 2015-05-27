@@ -8,10 +8,11 @@ $ribbon-less-gutter-width: 44px;
 
 footer {
   @include ribbon-tails($height: 29px, $width: 18px, $shadow-offset: $shadow-offset,
-                        $backface-hint-size: 8px, $backface-hint-x-offset: 4px,
-                        $backface-hint-y-offset: 5px,
+                        $backface-hint-size: 8px, $backface-hint-x-offset: 10px,
+                        $backface-hint-y-offset: 19px,
                         $from-angle: top);
   padding-top: 4rem;
+  position: relative;
   text-align: center;
   z-index: 5;
   .ribbon-outer {
