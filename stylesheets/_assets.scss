@@ -1,0 +1,12 @@
+@import 'shared';
+
+/* animations */
+
+@keyframes tail-bounce {
+  0%    { transform: scaleX(1.0); }
+  40%   { transform: scaleX(1.5); }
+  70%   { transform: scaleX(0.5); }
+  85%   { transform: scaleX(1.3); }
+  95%   { transform: scaleX(0.7); }
+  100%  { transform: scaleX(1.0); }
+}
