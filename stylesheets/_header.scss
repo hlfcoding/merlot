@@ -54,8 +54,8 @@ $content-pod-width: $pod-wrapper-width - $content-gutter-width-no-ribbon;
 header {
   $backface-hint-size: 25px;
   @include ribbon-tails($height: 105px, $width: 56px, $shadow-offset: $shadow-offset,
-                        $backface-hint-size: $backface-hint-size, $backface-hint-x-offset: 12px,
-                        $backface-hint-y-offset: 16px);
+                        $backface-hint-size: $backface-hint-size, $backface-hint-x-offset: 31px,
+                        $backface-hint-y-offset: 68px);
   position: relative;
   text-align: center;
   top: 3rem;

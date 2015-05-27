@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Gentium+Book+Basic:400italic,700italic|Inconsolata:400,700|Merriweather+Sans:400,700,800" media="all">
     <link rel="stylesheet" href="stylesheets/main.css" media="all">
 
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
     <title>Merlot '15 GitHub Pages Theme by hlfcoding</title>
   </head>
 
@@ -21,8 +23,8 @@
             <h1>Merlot</h1>
             <h2>a fancy schmancy (&amp; updated) pages theme</h2>
           </div>
-          <div class="left-tail" role="presentation"></div>
-          <div class="right-tail" role="presentation"></div>
+          <div class="left-tail" role="presentation"><div class="tip"></div></div>
+          <div class="right-tail" role="presentation"><div class="tip"></div></div>
         </div>
       </header>
 
@@ -174,8 +176,8 @@ $(<span class="hljs-string">'x-awesome'</span>).<span class="hljs-keyword">find<
               can be found on <a href="http://github.com/hlfcoding/merlot">GitHub</a>
             </p>
           </div>
-          <div class="left-tail" role="presentation"></div>
-          <div class="right-tail" role="presentation"></div>
+          <div class="left-tail" role="presentation"><div class="tip"></div></div>
+          <div class="right-tail" role="presentation"><div class="tip"></div></div>
         </div>
         <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
         <div class="octocat"></div>
@@ -183,5 +185,18 @@ $(<span class="hljs-string">'x-awesome'</span>).<span class="hljs-keyword">find<
 
     </div>
 
+    <script>
+      $(function() {
+        var duration = 500;
+        $('body').on('click', '.ribbon-outer .tip', function(event) {
+          var $tail = $(event.currentTarget);
+          if ($tail.is('.animating')) { return; }
+          $tail.addClass('animating');
+          setTimeout(function() {
+            $tail.removeClass('animating');
+          }, duration);
+        });
+      });
+    </script>
   </body>
 </html>
