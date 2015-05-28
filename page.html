@@ -188,7 +188,7 @@ $(<span class="hljs-string">'x-awesome'</span>).<span class="hljs-keyword">find<
     <script>
       $(function() {
         var duration = 500;
-        $('body').on('click', '.ribbon-outer .tip', function(event) {
+        $('body').on('click touchstart', '.ribbon-outer .tip', function(event) {
           var $tail = $(event.currentTarget);
           if ($tail.is('.animating')) { return; }
           $tail.addClass('animating');
