@@ -95,7 +95,7 @@ section#downloads {
   $tail-height: 30px;
   $tail-pull: $shadow-offset - $tail-height;
   background: $shadow-color;
-  margin: { top: -5.666rem; bottom: $y-spacing-1; } // magic
+  margin: { top: -5.6666rem; bottom: $y-spacing-1; } // magic
   @include mobile { margin-top: -6rem; }
   padding-bottom: $shadow-offset;
   position: relative;
@@ -124,9 +124,9 @@ section#downloads {
     $color: $accent-color-2-light-4;
     color: $color;
     display: inline-block;
-    font: { family: #{$font-family-1}; size: 1.333rem; weight: 800; }
+    font: { family: #{$font-family-1}; size: 1.3333rem; weight: 800; }
     line-height: 1;
-    padding-top: 9.666rem; // magic
+    padding-top: 9.6666rem; // magic
     @include mobile { padding-top: 10rem; }
     width: 50%;
     &:focus {
@@ -140,23 +140,23 @@ section#downloads {
     em {
       display: block;
       font: italic #{$full-font-size}/1 #{$font-family-2};
-      margin-bottom: 0.333em;
+      margin-bottom: 0.3333em;
     }
   }
 }
 
 section#main_content {
-  $bottom-pull-offset: 16.333rem;
-  $top-pull-offset: 16.333rem;
+  $bottom-pull-offset: 16.3333rem;
+  $top-pull-offset: 16.3333rem;
   background-image: linear-gradient(to bottom,
-    $canvas-color-light-1 13.333rem,
+    $canvas-color-light-1 13.3333rem,
     $canvas-color 80%,
     lighten($canvas-color-dark-1, 2%)
   );
   box-shadow: 0 0 0 2px $canvas-color-dark-1;
   box-sizing: border-box;
   margin: { top: -$top-pull-offset; bottom: -$bottom-pull-offset; }
-  min-height: 12.333rem;
+  min-height: 12.3333rem;
   padding: ($top-pull-offset + $y-spacing-1) $x-spacing-2 ($bottom-pull-offset - 3rem);
   position: relative;
   z-index: 1;
