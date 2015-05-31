@@ -1,0 +1,23 @@
+// uses similar colors from pengxwang.com
+
+// primary accent color range
+$accent-color-1: #03a;
+$accent-color-1-light-1: #06d;
+$accent-color-1-light-2: #6af;
+
+// secondary accent color range
+$accent-color-2: #25a;
+$accent-color-2-light-1: #46a; // suggested color of fork-sprite.png
+$accent-color-2-light-2: #79b;
+$accent-color-2-light-3: #8ac;
+$accent-color-2-light-4: #9bd; // suggested color of blockquote-gfx.png and chevron.png
+$accent-color-2-dark-1: #258;
+
+// base color range, constrained to a dark-on-light theme
+$canvas-color: #dadadf;
+$canvas-color-dark-1: #cacacf; // suggested color of hr.png
+$canvas-color-dark-2: #aaaaaf; // suggested color of octocat.png
+$canvas-color-dark-3: #9a9a9f;
+$canvas-color-dark-4: #6a6a6f;
+$canvas-color-light-1: #eaeaee;
+$canvas-color-light-2: #fafaff;
