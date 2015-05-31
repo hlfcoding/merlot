@@ -1,24 +1,4 @@
-// primary accent color range
-$accent-color-1: #7c334f;
-$accent-color-1-light-1: #cd596b;
-$accent-color-1-light-2: #e69b95;
-
-// secondary accent color range
-$accent-color-2: #417090;
-$accent-color-2-light-1: #5b7e99;
-$accent-color-2-light-2: #7eb0d2;
-$accent-color-2-light-3: #8b786f;
-$accent-color-2-light-4: #83b7da;
-$accent-color-2-dark-1: #3d667c;
-
-// base color range, constrained to a dark-on-light theme
-$canvas-color: #ece4d8;
-$canvas-color-dark-1: #d3ccc1;
-$canvas-color-dark-2: #bdb6ad;
-$canvas-color-dark-3: #8b786f;
-$canvas-color-dark-4: #544943;
-$canvas-color-light-1: #fff6e9;
-$canvas-color-light-2: #fffff3;
+@import 'theme';
 
 // font sizes
 $base-line-height: 1.5;
