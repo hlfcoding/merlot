@@ -101,9 +101,10 @@ code {
 pre {
   background: $canvas-color-light-1;
   box-shadow: $framed-box-shadow;
+  line-height: 1; // act more like a typewriter
   margin: $y-spacing-1 0 $y-spacing-3;
   overflow: auto;
-  padding: $y-spacing-1 1em;
+  padding: 1em;
 }
 
 table {
