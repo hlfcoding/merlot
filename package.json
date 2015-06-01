@@ -4,10 +4,10 @@
   "author": "Peng Wang <peng@pengxwang.com>",
   "description": "Fork of Merlot Github Pages theme. Currently private from lack of Node support.",
   "license": "MIT",
-  "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^3.0.0",
+    "grunt-bump": "^0.3.1",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-watch": "^0.6.1",

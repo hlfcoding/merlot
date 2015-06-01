@@ -17,6 +17,15 @@ module.exports = (grunt) ->
         src: 'stylesheets/main.css'
         dest: 'stylesheets/main.css'
 
+    bump:
+      options:
+        files: [
+          'bower.json'
+          'package.json'
+        ]
+        commitFiles: ['.']
+        pushTo: 'origin'
+
     copy:
       lib:
         files:

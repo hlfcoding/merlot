@@ -1,4 +1,4 @@
-# Merlot
+# Merlot ![GitHub License](https://img.shields.io/github/license/hlfcoding/merlot.svg)
 
 > Merlot is a fancy page template for GitHub Pages. Want to use it for your own
 site? [Fork this repo](https://github.com/hlfcoding/merlot/fork) and add your
@@ -28,6 +28,16 @@ $ grunt --theme=pinot-noir
 $ grunt switch-theme
 # or to switch to your own
 $ grunt switch-theme --theme=pinot-noir
+```
+
+## Install
+
+```bash
+# or if you want to create a theme
+$ npm install merlot
+# or to just use current theme (bleu)
+$ bower install merlot
+# copy files and assets into your project as fit...
 ```
 
 ## Resources
