@@ -2,7 +2,7 @@
   "name": "merlot",
   "version": "0.1.0",
   "author": "Peng Wang <peng@pengxwang.com>",
-  "description": "Fork of Merlot Github Pages theme. Currently private from lack of Node support.",
+  "description": "Fork of Merlot Github Pages theme to revamp and extend it.",
   "license": "MIT",
   "devDependencies": {
     "meyer-reset": "^2.0.1"
