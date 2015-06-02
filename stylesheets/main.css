@@ -168,7 +168,8 @@ header {
   z-index: 3; }
   header .left-tail, header .right-tail {
     position: absolute;
-    width: 56px;
+    overflow: hidden;
+    width: 25px;
     height: 105px;
     z-index: 0;
     bottom: -37px;
@@ -181,13 +182,6 @@ header {
       position: absolute;
       top: 0;
       left: 0; }
-      header .left-tail > .tip.animating, header .right-tail > .tip.animating {
-        -webkit-animation-name: tail-bounce;
-                animation-name: tail-bounce;
-        -webkit-animation-duration: 0.5s;
-                animation-duration: 0.5s;
-        -webkit-animation-timing-function: linear;
-                animation-timing-function: linear; }
     header .left-tail:after, header .right-tail:after {
       border-color: #001e63;
       border-style: solid;
@@ -200,40 +194,58 @@ header {
       border-bottom-color: transparent;
       top: 68px; }
   header .left-tail {
-    left: -31px;
+    left: 0;
     /* backface depth hint */ }
     header .left-tail > .tip {
       border-left-width: 19px;
       border-right-width: 37px; }
-      header .left-tail > .tip.animating {
-        -webkit-transform-origin: right center;
-            -ms-transform-origin: right center;
-                transform-origin: right center; }
     header .left-tail:after {
-      border-left-color: transparent;
-      left: 31px; }
+      border-left-color: transparent; }
   header .right-tail {
-    right: -31px;
+    right: 0;
     /* backface depth hint */ }
     header .right-tail > .tip {
       border-left-width: 37px;
       border-right-width: 19px; }
-      header .right-tail > .tip.animating {
-        -webkit-transform-origin: left center;
-            -ms-transform-origin: left center;
-                transform-origin: left center; }
     header .right-tail:after {
-      border-right-color: transparent;
-      right: 31px; }
+      border-right-color: transparent; }
   @media screen and (min-width: 600px) {
-    header .left-tail > .tip, header .right-tail > .tip {
-      background-color: #002886;
-      background-clip: border-box;
-      box-shadow: 0 5px 0 #aaaaaf; }
-    header .left-tail > .tip {
-      border-left-color: #dadadf; }
-    header .right-tail > .tip {
-      border-right-color: #dadadf; } }
+    header .left-tail, header .right-tail {
+      overflow: visible;
+      width: 56px; }
+      header .left-tail > .tip, header .right-tail > .tip {
+        background-color: #002886;
+        background-clip: border-box;
+        box-shadow: 0 5px 0 #aaaaaf; }
+        header .left-tail > .tip.animating, header .right-tail > .tip.animating {
+          -webkit-animation-name: tail-bounce;
+                  animation-name: tail-bounce;
+          -webkit-animation-duration: 0.5s;
+                  animation-duration: 0.5s;
+          -webkit-animation-timing-function: linear;
+                  animation-timing-function: linear; }
+    header .left-tail {
+      left: -31px;
+      /* backface depth hint */ }
+      header .left-tail .tip {
+        border-left-color: #dadadf; }
+        header .left-tail .tip.animating {
+          -webkit-transform-origin: right center;
+              -ms-transform-origin: right center;
+                  transform-origin: right center; }
+      header .left-tail:after {
+        left: 31px; }
+    header .right-tail {
+      right: -31px;
+      /* backface depth hint */ }
+      header .right-tail .tip {
+        border-right-color: #dadadf; }
+        header .right-tail .tip.animating {
+          -webkit-transform-origin: left center;
+              -ms-transform-origin: left center;
+                  transform-origin: left center; }
+      header .right-tail:after {
+        right: 31px; } }
   header .ribbon-inner {
     background-color: #03a;
     box-shadow: inset 0 0 0 4px #03a, inset 0 0 0 6px #06d, 0 30px 0 -25px #258;
@@ -370,7 +382,8 @@ footer {
   z-index: 5; }
   footer .left-tail, footer .right-tail {
     position: absolute;
-    width: 18px;
+    overflow: hidden;
+    width: 8px;
     height: 29px;
     z-index: 0;
     top: -10px;
@@ -383,13 +396,6 @@ footer {
       position: absolute;
       top: 0;
       left: 0; }
-      footer .left-tail > .tip.animating, footer .right-tail > .tip.animating {
-        -webkit-animation-name: tail-bounce;
-                animation-name: tail-bounce;
-        -webkit-animation-duration: 0.5s;
-                animation-duration: 0.5s;
-        -webkit-animation-timing-function: linear;
-                animation-timing-function: linear; }
     footer .left-tail:after, footer .right-tail:after {
       border-color: #001e63;
       border-style: solid;
@@ -402,40 +408,58 @@ footer {
       border-top-color: transparent;
       bottom: 19px; }
   footer .left-tail {
-    left: -10px;
+    left: 0;
     /* backface depth hint */ }
     footer .left-tail > .tip {
       border-left-width: 6px;
       border-right-width: 12px; }
-      footer .left-tail > .tip.animating {
-        -webkit-transform-origin: right center;
-            -ms-transform-origin: right center;
-                transform-origin: right center; }
     footer .left-tail:after {
-      border-left-color: transparent;
-      left: 10px; }
+      border-left-color: transparent; }
   footer .right-tail {
-    right: -10px;
+    right: 0;
     /* backface depth hint */ }
     footer .right-tail > .tip {
       border-left-width: 12px;
       border-right-width: 6px; }
-      footer .right-tail > .tip.animating {
-        -webkit-transform-origin: left center;
-            -ms-transform-origin: left center;
-                transform-origin: left center; }
     footer .right-tail:after {
-      border-right-color: transparent;
-      right: 10px; }
+      border-right-color: transparent; }
   @media screen and (min-width: 600px) {
-    footer .left-tail > .tip, footer .right-tail > .tip {
-      background-color: #002886;
-      background-clip: border-box;
-      box-shadow: 0 2px 0 #aaaaaf; }
-    footer .left-tail > .tip {
-      border-left-color: #dadadf; }
-    footer .right-tail > .tip {
-      border-right-color: #dadadf; } }
+    footer .left-tail, footer .right-tail {
+      overflow: visible;
+      width: 18px; }
+      footer .left-tail > .tip, footer .right-tail > .tip {
+        background-color: #002886;
+        background-clip: border-box;
+        box-shadow: 0 2px 0 #aaaaaf; }
+        footer .left-tail > .tip.animating, footer .right-tail > .tip.animating {
+          -webkit-animation-name: tail-bounce;
+                  animation-name: tail-bounce;
+          -webkit-animation-duration: 0.5s;
+                  animation-duration: 0.5s;
+          -webkit-animation-timing-function: linear;
+                  animation-timing-function: linear; }
+    footer .left-tail {
+      left: -10px;
+      /* backface depth hint */ }
+      footer .left-tail .tip {
+        border-left-color: #dadadf; }
+        footer .left-tail .tip.animating {
+          -webkit-transform-origin: right center;
+              -ms-transform-origin: right center;
+                  transform-origin: right center; }
+      footer .left-tail:after {
+        left: 10px; }
+    footer .right-tail {
+      right: -10px;
+      /* backface depth hint */ }
+      footer .right-tail .tip {
+        border-right-color: #dadadf; }
+        footer .right-tail .tip.animating {
+          -webkit-transform-origin: left center;
+              -ms-transform-origin: left center;
+                  transform-origin: left center; }
+      footer .right-tail:after {
+        right: 10px; } }
   footer .ribbon-outer {
     border-bottom: 2px solid #aaaaaf;
     position: relative; }
