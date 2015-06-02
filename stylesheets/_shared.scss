@@ -49,7 +49,8 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
   $y-offset: round($height * 0.35);
   .left-tail, .right-tail {
     position: absolute;
-    width: $width; height: $height;
+    overflow: hidden;
+    width: $backface-hint-size; height: $height;
     z-index: 0;
     @if $from-angle == bottom {
       bottom: -$y-offset;
@@ -63,13 +64,6 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
         top-width: round($height / 2); bottom-width: round($height / 2);
       }
       position: absolute; top: 0; left: 0;
-      &.animating {
-        animation: {
-          name: tail-bounce;
-          duration: 0.5s;
-          timing-function: linear;
-        }
-      }
     }
     /* backface depth hint */
     &:after {
@@ -93,54 +87,75 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
     }
   }
   .left-tail {
-    left: -$x-offset;
+    left: 0;
     > .tip {
       border: {
         left-width: round($width / 3);
         right-width: round($width * 2 / 3);
       }
-      &.animating {
-        transform-origin: right center;
-      }
     }
     /* backface depth hint */
     &:after {
       border-left-color: transparent;
-      left: $backface-hint-x-offset;
     }
   }
   .right-tail {
-    right: -$x-offset;
+    right: 0;
     > .tip {
       border: {
         left-width: round($width * 2 / 3);
         right-width: round($width / 3);
       }
-      &.animating {
-        transform-origin: left center;
-      }
     }
     /* backface depth hint */
     &:after {
       border-right-color: transparent;
-      right: $backface-hint-x-offset;
     }
   }
   @include non-mobile {
     .left-tail, .right-tail {
+      overflow: visible;
+      width: $width;
       > .tip {      
         background: {
           color: $color;
           clip: border-box; // be explicit
         }
         box-shadow: 0 $shadow-offset 0 $canvas-color-dark-2;
+        &.animating {
+          animation: {
+            name: tail-bounce;
+            duration: 0.5s;
+            timing-function: linear;
+          }
+        }
       }
     }
-    .left-tail > .tip {
-      border-left-color: $bg-color;
+    .left-tail {
+      left: -$x-offset;
+      .tip {
+        border-left-color: $bg-color;
+        &.animating {
+          transform-origin: right center;
+        }
+      }
+      /* backface depth hint */
+      &:after {
+        left: $backface-hint-x-offset;
+      }
     }
-    .right-tail > .tip {
-      border-right-color: $bg-color;
+    .right-tail {
+      right: -$x-offset;
+      .tip {
+        border-right-color: $bg-color;
+        &.animating {
+          transform-origin: left center;
+        }
+      }
+      /* backface depth hint */
+      &:after {
+        right: $backface-hint-x-offset;
+      }
     }
   }
 }
