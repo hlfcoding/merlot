@@ -674,8 +674,8 @@ header > .ribbon-outer:after {
 /* content-based headers */
 #main_content h1, #main_content h2 {
   /* badges */ }
-  #main_content h1 > *, #main_content h2 > * {
-    vertical-align: middle; }
+  #main_content h1 *, #main_content h2 * {
+    vertical-align: baseline; }
   #main_content h1 img, #main_content h2 img {
     border: 0;
     box-shadow: none; }

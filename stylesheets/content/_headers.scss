@@ -4,7 +4,9 @@
 
 %badge-container {
   /* badges */
-  > * { vertical-align: middle; }
+  * {
+    vertical-align: baseline;
+  }
   img {
     border: 0;
     box-shadow: none;
