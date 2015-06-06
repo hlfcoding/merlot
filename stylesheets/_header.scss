@@ -101,23 +101,26 @@ section#downloads {
   position: relative;
   text-align: center;
   z-index: 2;
+  .tip {
+    @extend %downloads-tail-tip;
+    border-style: outset; // fix for Firefox
+    border-top: { style: solid; width: $tail-height; }
+  }
   > .inner {
     $bg-color: $accent-color-2-light-1;
     $line-color: $accent-color-2-light-2;
     background-color: $bg-color;
     padding-bottom: $y-spacing-1;
     > .tip {
-      @extend %downloads-tail-tip;
       bottom: $tail-pull;
-      border-top: { color: $bg-color; width: $tail-height; }
+      border-top-color: $bg-color;
       z-index: -1;
     }
   }
   > .tip {
     /* shadow */
-    @extend %downloads-tail-tip;
     bottom: $tail-pull - $shadow-offset;
-    border-top: { color: $shadow-color; width: $tail-height; }
+    border-top-color: $shadow-color;
     z-index: -2;
   }
   a {

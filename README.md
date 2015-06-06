@@ -4,7 +4,13 @@
 site? [Fork this repo](https://github.com/hlfcoding/merlot/fork) and add your
 own content.
 
-![screenshot](https://cloud.githubusercontent.com/assets/100884/7903524/13ef5b56-0794-11e5-8305-d530169615a7.png)
+![screenshot](https://cloud.githubusercontent.com/assets/100884/8019015/372f6aee-0bee-11e5-837b-7a1f8fb512a0.png)
+
+## Support
+
+|      Browser       | Chrome | Firefox | Safari | IE | iOS | Android |
+|--------------------|--------|---------|--------|----|-----|---------|
+| Supported versions | latest | latest  | latest | 9+ | 7+  | 4+      |
 
 ## Themes
 

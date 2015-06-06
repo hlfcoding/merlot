@@ -60,7 +60,7 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
     > .tip {
       border: {
         color: transparent;
-        style: solid;
+        style: outset solid; // fix for Firefox
         top-width: round($height / 2); bottom-width: round($height / 2);
       }
       position: absolute; top: 0; left: 0;
