@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Gentium+Book+Basic:400italic,700italic|Inconsolata:400,700|Merriweather+Sans:400,700,800" media="all">
+    <link rel="stylesheet" href="stylesheets/main.css" media="all">
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <title><%= pageTitle %></title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/<%= githubPath %>">Fork Me on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <div class="ribbon-outer">
+          <div class="ribbon-inner">
+            <h1><%= headline %></h1>
+            <h2><%= subHeadline %></h2>
+          </div>
+          <div class="left-tail" role="presentation"><div class="tip"></div></div>
+          <div class="right-tail" role="presentation"><div class="tip"></div></div>
+        </div>
+      </header>
+
+      <section id="downloads">
+        <div class="inner">
+          <a href="https://github.com/<%= githubPath %>/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/<%= githubPath %>/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+          <div class="tip" role="presentation"></div>
+        </div>
+        <div class="tip" role="presentation"></div>
+      </section>
+
+      <section id="main_content">
+        <%= content %>
+      </section>
+
+      <footer>
+        <div class="ribbon-outer">
+          <div class="ribbon-inner">
+            <p>
+              this fork by <a href="http://github.com/<%= githubAuthor %>"><%= githubAuthor %></a>
+              can be found on <a href="http://github.com/<%= githubPath %>">GitHub</a>
+            </p>
+          </div>
+          <div class="left-tail" role="presentation"><div class="tip"></div></div>
+          <div class="right-tail" role="presentation"><div class="tip"></div></div>
+        </div>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <div class="octocat"></div>
+      </footer>
+
+    </div>
+
+    <script>
+      $(function() {
+        var duration = 500;
+        $('body').on('click touchstart', '.ribbon-outer .tip', function(event) {
+          var $tail = $(event.currentTarget);
+          if ($tail.is('.animating')) { return; }
+          $tail.addClass('animating');
+          setTimeout(function() {
+            $tail.removeClass('animating');
+          }, duration);
+        });
+      });
+    </script>
+  </body>
+</html>
