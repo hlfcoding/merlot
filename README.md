@@ -45,28 +45,3 @@ $ npm install merlot
 $ bower install merlot
 # copy files and assets into your project as fit...
 ```
-
-## Resources
-
-### Sample ST2 Project File
-
-```json
-{
-  "folders":
-  [
-    {
-      "file_exclude_patterns":
-      [
-        "*.css*",
-        "*.png",
-        "*.sketch"
-      ],
-      "folder_exclude_patterns":
-      [
-        "node_modules"
-      ],
-      "path": "merlot"
-    }
-  ]
-}
-```

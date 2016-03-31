@@ -1,0 +1,20 @@
+{
+  "folders":
+  [
+    {
+      "file_exclude_patterns":
+      [
+        "*.css*",
+        "*.png",
+        "*.sketch",
+        "*.sublime-workspace"
+      ],
+      "folder_exclude_patterns":
+      [
+        "bower_components",
+        "node_modules"
+      ],
+      "path": "."
+    }
+  ]
+}
