@@ -1,6 +1,6 @@
 {
   "name": "merlot",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Fork of Merlot Github Pages theme to revamp and extend it.",
   "main": "template.jst.html",
   "keywords": ["css", "scss", "gh-pages", "theme"],
