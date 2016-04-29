@@ -1,9 +1,15 @@
 {
   "name": "merlot",
   "version": "0.1.7",
-  "author": "Peng Wang <peng@pengxwang.com>",
   "description": "Fork of Merlot Github Pages theme to revamp and extend it.",
+  "main": "template.jst.html",
+  "keywords": ["css", "scss", "gh-pages", "theme"],
+  "author": "Peng Wang <peng@pengxwang.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hlfcoding/merlot"
+  },
   "devDependencies": {
     "grunt": "^1.0.0",
     "grunt-autoprefixer": "^3.0.0",
