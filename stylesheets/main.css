@@ -30,13 +30,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-header > .ribbon-outer:before, header > .ribbon-outer:after {
+header > .ribbon-outer::before, header > .ribbon-outer::after {
   content: ' ';
   display: table; }
-header > .ribbon-outer:after {
+header > .ribbon-outer::after {
   clear: both; }
 
-/* animations */
 @-webkit-keyframes tail-bounce {
   0% {
     -webkit-transform: scaleX(1);
@@ -56,6 +55,7 @@ header > .ribbon-outer:after {
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }
+
 @keyframes tail-bounce {
   0% {
     -webkit-transform: scaleX(1);
@@ -75,13 +75,12 @@ header > .ribbon-outer:after {
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }
-header > .ribbon-outer:before, header > .ribbon-outer:after {
+header > .ribbon-outer::before, header > .ribbon-outer::after {
   content: ' ';
   display: table; }
-header > .ribbon-outer:after {
+header > .ribbon-outer::after {
   clear: both; }
 
-/* wrapper */
 body {
   background-color: #dadadf; }
 
@@ -95,12 +94,12 @@ div.shell > footer {
 a#forkme_banner {
   background: transparent url(../images/fork-sprite.png) 0 0 no-repeat;
   display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-indent: -9000px;
-  width: 138px;
   height: 138px;
+  left: 0;
+  position: absolute;
+  text-indent: -9000px;
+  top: 0;
+  width: 138px;
   z-index: 4; }
   a#forkme_banner:hover {
     background-position: 0 -138px; }
@@ -123,23 +122,22 @@ a#forkme_banner {
 @media screen and (max-width: 600px) {
   a#forkme_banner {
     display: none; } }
-header > .ribbon-outer:before, header > .ribbon-outer:after {
+header > .ribbon-outer::before, header > .ribbon-outer::after {
   content: ' ';
   display: table; }
-header > .ribbon-outer:after {
+header > .ribbon-outer::after {
   clear: both; }
 
-/* header */
 section#downloads .tip {
-  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  height: 0;
   left: 0;
-  right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid; }
+  position: absolute;
+  right: 0;
+  width: 0; }
   @media screen and (min-width: 800px) {
     section#downloads .tip {
       border-left-width: 340px;
@@ -166,85 +164,86 @@ header {
   text-align: center;
   top: 3rem;
   z-index: 3; }
-  header .left-tail, header .right-tail {
+  header .left-tail,
+  header .right-tail {
+    height: 105px;
     position: absolute;
     overflow: hidden;
     width: 25px;
-    height: 105px;
     z-index: 0;
-    bottom: -37px;
-    /* backface depth hint */ }
-    header .left-tail > .tip, header .right-tail > .tip {
+    bottom: -37px; }
+    header .left-tail > .tip,
+    header .right-tail > .tip {
+      border-bottom-width: 53px;
       border-color: transparent;
       border-style: outset solid;
       border-top-width: 53px;
-      border-bottom-width: 53px;
+      left: 0;
       position: absolute;
-      top: 0;
-      left: 0; }
-    header .left-tail:after, header .right-tail:after {
+      top: 0; }
+    header .left-tail::after,
+    header .right-tail::after {
       border-color: #001e63;
       border-style: solid;
       border-width: 12.5px;
       content: ' ';
       display: block;
+      height: 0;
       position: absolute;
       width: 0;
-      height: 0;
       border-bottom-color: transparent;
       top: 68px; }
   header .left-tail {
-    left: 0;
-    /* backface depth hint */ }
+    left: 0; }
     header .left-tail > .tip {
       border-left-width: 19px;
       border-right-width: 37px; }
-    header .left-tail:after {
+    header .left-tail::after {
       border-left-color: transparent; }
   header .right-tail {
-    right: 0;
-    /* backface depth hint */ }
+    right: 0; }
     header .right-tail > .tip {
       border-left-width: 37px;
       border-right-width: 19px; }
-    header .right-tail:after {
+    header .right-tail::after {
       border-right-color: transparent; }
   @media screen and (min-width: 600px) {
-    header .left-tail, header .right-tail {
+    header .left-tail,
+    header .right-tail {
       overflow: visible;
       width: 56px; }
-      header .left-tail > .tip, header .right-tail > .tip {
-        background-color: #002886;
+      header .left-tail > .tip,
+      header .right-tail > .tip {
         background-clip: border-box;
+        background-color: #002886;
         box-shadow: 0 5px 0 #aaaaaf; }
-        header .left-tail > .tip.animating, header .right-tail > .tip.animating {
+        header .left-tail > .tip.animating,
+        header .right-tail > .tip.animating {
+          -webkit-animation-duration: .5s;
+                  animation-duration: .5s;
           -webkit-animation-name: tail-bounce;
                   animation-name: tail-bounce;
-          -webkit-animation-duration: 0.5s;
-                  animation-duration: 0.5s;
           -webkit-animation-timing-function: linear;
                   animation-timing-function: linear; }
     header .left-tail {
-      left: -31px;
-      /* backface depth hint */ }
+      left: -31px; }
       header .left-tail .tip {
         border-left-color: #dadadf; }
         header .left-tail .tip.animating {
           -webkit-transform-origin: right center;
               -ms-transform-origin: right center;
                   transform-origin: right center; }
-      header .left-tail:after {
+      header .left-tail::after {
         left: 31px; }
     header .right-tail {
-      right: -31px;
-      /* backface depth hint */ }
+      right: -31px; }
       header .right-tail .tip {
         border-right-color: #dadadf; }
         header .right-tail .tip.animating {
           -webkit-transform-origin: left center;
               -ms-transform-origin: left center;
                   transform-origin: left center; }
-      header .right-tail:after {
+      header .right-tail::after {
         right: 31px; } }
   header .ribbon-inner {
     background-color: #03a;
@@ -266,8 +265,8 @@ header {
 
 section#downloads {
   background: #d2d2d7;
-  margin-top: -5.6666rem;
   margin-bottom: 0.6666rem;
+  margin-top: -5.6666rem;
   padding-bottom: 5px;
   position: relative;
   text-align: center;
@@ -283,13 +282,12 @@ section#downloads {
     background-color: #46a;
     padding-bottom: 0.6666rem; }
     section#downloads > .inner > .tip {
-      bottom: -25px;
       border-top-color: #46a;
+      bottom: -25px;
       z-index: -1; }
   section#downloads > .tip {
-    /* shadow */
-    bottom: -30px;
     border-top-color: #d2d2d7;
+    bottom: -30px;
     z-index: -2; }
   section#downloads a {
     color: #9bd;
@@ -306,20 +304,20 @@ section#downloads {
     section#downloads a:focus {
       outline: none; }
     section#downloads a:hover {
-      color: #bfd5ea;
       background-image: linear-gradient(to bottom, #258, #46a);
+      color: #bfd5ea;
       text-decoration: none; }
     section#downloads a em {
       display: block;
       font: italic 14px/1 Gentium Book Basic, Georgia, Times, Times New Roman, serif;
-      margin-bottom: 0.3333em; }
+      margin-bottom: .3333em; }
 
 section#main_content {
   background-image: linear-gradient(to bottom, #eaeaee 13.3333rem, #dadadf 80%, #cfcfd4);
   box-shadow: 0 0 0 2px #cacacf;
   box-sizing: border-box;
-  margin-top: -16.3333rem;
   margin-bottom: -16.3333rem;
+  margin-top: -16.3333rem;
   min-height: 12.3333rem;
   padding: 16.9999rem 1rem 13.3333rem;
   position: relative;
@@ -370,97 +368,97 @@ section#main_content {
 
   section#main_content {
     width: 260px; } }
-header > .ribbon-outer:before, header > .ribbon-outer:after {
+header > .ribbon-outer::before, header > .ribbon-outer::after {
   content: ' ';
   display: table; }
-header > .ribbon-outer:after {
+header > .ribbon-outer::after {
   clear: both; }
 
-/* footer */
 footer {
   padding-top: 4rem;
   position: relative;
   text-align: center;
   z-index: 5; }
-  footer .left-tail, footer .right-tail {
+  footer .left-tail,
+  footer .right-tail {
+    height: 29px;
     position: absolute;
     overflow: hidden;
     width: 8px;
-    height: 29px;
     z-index: 0;
-    top: -10px;
-    /* backface depth hint */ }
-    footer .left-tail > .tip, footer .right-tail > .tip {
+    top: -10px; }
+    footer .left-tail > .tip,
+    footer .right-tail > .tip {
+      border-bottom-width: 15px;
       border-color: transparent;
       border-style: outset solid;
       border-top-width: 15px;
-      border-bottom-width: 15px;
+      left: 0;
       position: absolute;
-      top: 0;
-      left: 0; }
-    footer .left-tail:after, footer .right-tail:after {
+      top: 0; }
+    footer .left-tail::after,
+    footer .right-tail::after {
       border-color: #001e63;
       border-style: solid;
       border-width: 4px;
       content: ' ';
       display: block;
+      height: 0;
       position: absolute;
       width: 0;
-      height: 0;
       border-top-color: transparent;
       bottom: 19px; }
   footer .left-tail {
-    left: 0;
-    /* backface depth hint */ }
+    left: 0; }
     footer .left-tail > .tip {
       border-left-width: 6px;
       border-right-width: 12px; }
-    footer .left-tail:after {
+    footer .left-tail::after {
       border-left-color: transparent; }
   footer .right-tail {
-    right: 0;
-    /* backface depth hint */ }
+    right: 0; }
     footer .right-tail > .tip {
       border-left-width: 12px;
       border-right-width: 6px; }
-    footer .right-tail:after {
+    footer .right-tail::after {
       border-right-color: transparent; }
   @media screen and (min-width: 600px) {
-    footer .left-tail, footer .right-tail {
+    footer .left-tail,
+    footer .right-tail {
       overflow: visible;
       width: 18px; }
-      footer .left-tail > .tip, footer .right-tail > .tip {
-        background-color: #002886;
+      footer .left-tail > .tip,
+      footer .right-tail > .tip {
         background-clip: border-box;
+        background-color: #002886;
         box-shadow: 0 2px 0 #aaaaaf; }
-        footer .left-tail > .tip.animating, footer .right-tail > .tip.animating {
+        footer .left-tail > .tip.animating,
+        footer .right-tail > .tip.animating {
+          -webkit-animation-duration: .5s;
+                  animation-duration: .5s;
           -webkit-animation-name: tail-bounce;
                   animation-name: tail-bounce;
-          -webkit-animation-duration: 0.5s;
-                  animation-duration: 0.5s;
           -webkit-animation-timing-function: linear;
                   animation-timing-function: linear; }
     footer .left-tail {
-      left: -10px;
-      /* backface depth hint */ }
+      left: -10px; }
       footer .left-tail .tip {
         border-left-color: #dadadf; }
         footer .left-tail .tip.animating {
           -webkit-transform-origin: right center;
               -ms-transform-origin: right center;
                   transform-origin: right center; }
-      footer .left-tail:after {
+      footer .left-tail::after {
         left: 10px; }
     footer .right-tail {
-      right: -10px;
-      /* backface depth hint */ }
+      right: -10px; }
       footer .right-tail .tip {
         border-right-color: #dadadf; }
         footer .right-tail .tip.animating {
           -webkit-transform-origin: left center;
               -ms-transform-origin: left center;
                   transform-origin: left center; }
-      footer .right-tail:after {
+      footer .right-tail::after {
         right: 10px; } }
   footer .ribbon-outer {
     border-bottom: 2px solid #aaaaaf;
@@ -477,14 +475,14 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem; }
   footer > p {
-    margin-top: 1.3333rem;
-    margin-bottom: 1.3333rem; }
+    margin-bottom: 1.3333rem;
+    margin-top: 1.3333rem; }
   footer .ribbon-inner p {
     color: #6af;
     font: italic 14px/1 "Gentium Book Basic", Georgia, Times, "Times New Roman", serif;
     margin: 0;
-    padding-top: 3px;
-    padding-bottom: 4px; }
+    padding-bottom: 4px;
+    padding-top: 3px; }
   footer a {
     color: #06d; }
   footer .ribbon-inner a {
@@ -498,9 +496,9 @@ footer {
   footer .octocat {
     background: url(../images/octocat.png) no-repeat;
     background-size: cover;
-    width: 30px;
     height: 30px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 30px; }
 
 @media screen and (min-width: 800px) {
   footer {
@@ -520,13 +518,12 @@ footer {
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx), screen and (-webkit-min-device-pixel-ratio: 1.25), screen and (min-resolution: 120dpi) {
   footer .octocat {
     background-image: url(../images/octocat-2x.png); } }
-header > .ribbon-outer:before, header > .ribbon-outer:after {
+header > .ribbon-outer::before, header > .ribbon-outer::after {
   content: ' ';
   display: table; }
-header > .ribbon-outer:after {
+header > .ribbon-outer::after {
   clear: both; }
 
-/* base content */
 html {
   font: normal normal 14px/1.5 Merriweather Sans, Myriad, Calibri, sans-serif; }
 
@@ -541,7 +538,12 @@ a {
   a, a:hover {
     color: #25a; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Merriweather Sans", Myriad, Calibri, sans-serif;
   font-weight: 700; }
 
@@ -562,13 +564,13 @@ ol {
 ul {
   margin: 0.6666rem 0; }
   ul li {
-    background: transparent url(../images/chevron.png) 3px 6px no-repeat;
+    background: transparent url("../images/chevron.png") 3px 6px no-repeat;
     background-size: 7px 9px;
     padding-left: 1.3333rem; }
 
 blockquote {
-  background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
-  background-size: 1.1333rem 0.8666rem;
+  background: transparent url("../images/blockquote-gfx.png") 0 4px no-repeat;
+  background-size: 1.1333rem .8666rem;
   color: #9a9a9f;
   font-family: "Merriweather Sans", Myriad, Calibri, sans-serif;
   margin: 1.3333rem 0;
@@ -580,22 +582,22 @@ img {
   max-width: 100%; }
 
 hr {
-  background: transparent url(../images/hr.png) center repeat-x;
+  background: transparent url("../images/hr.png") center repeat-x;
   background-size: auto 18px;
   border: 0;
   height: 18px;
   margin: 1.3333rem 0;
   outline: none; }
 
-code, pre {
+code,
+pre {
   font: normal normal 14px/1.7 Inconsolata, Lucida Console, Bitstream Vera Sans Mono, monospace; }
 
 code {
   background: #eaeaee;
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(202, 202, 207, 0.5);
-  padding: 1px 0.3333rem;
-  /* reset */ }
+  padding: 1px 0.3333rem; }
   pre code {
     background: transparent;
     box-shadow: none;
@@ -610,8 +612,8 @@ pre {
   padding: 1em; }
 
 table {
-  border-top: 2px solid rgba(202, 202, 207, 0.5);
   border-collapse: separate;
+  border-top: 2px solid rgba(202, 202, 207, 0.5);
   display: table;
   margin: 0.6666rem 0;
   width: 100%; }
@@ -619,7 +621,8 @@ table {
 tr {
   display: table-row; }
 
-th, td {
+th,
+td {
   border-color: rgba(202, 202, 207, 0.5);
   border-style: solid;
   border-width: 0 2px 2px 0;
@@ -630,14 +633,16 @@ th, td {
 th {
   color: #06d;
   font-family: "Merriweather Sans", Myriad, Calibri, sans-serif;
-  font-size: 0.85em;
+  font-size: .85em;
   font-weight: 700; }
 
-td:last-child, th:last-child {
-  border-right: none; }
+td:last-child,
+th:last-child {
+  border-right: 0; }
 
-table > tr:last-child th, table > tr:last-child td {
-  border-bottom: none; }
+table > tr:last-child th,
+table > tr:last-child td {
+  border-bottom: 0; }
 
 dl {
   margin: 0.6666rem 0 1.3333rem; }
@@ -648,46 +653,43 @@ dt {
 
 dd {
   padding-left: 1.3333rem; }
-
-dd p:first-child {
-  margin-top: 0; }
+  dd p:first-child {
+    margin-top: 0; }
 
 @media screen and (max-width: 600px) {
   html {
     font-size: 12px; }
 
-  code, pre {
+  code,
+  pre {
     font-size: 12px; } }
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx), screen and (-webkit-min-device-pixel-ratio: 1.25), screen and (min-resolution: 120dpi) {
   ul li {
-    background-image: url(../images/chevron-2x.png); }
+    background-image: url("../images/chevron-2x.png"); }
 
   blockquote {
-    background-image: url(../images/blockquote-gfx-2x.png); }
+    background-image: url("../images/blockquote-gfx-2x.png"); }
 
   hr {
-    background-image: url(../images/hr-2x.png); } }
-header > .ribbon-outer:before, header > .ribbon-outer:after {
+    background-image: url("../images/hr-2x.png"); } }
+header > .ribbon-outer::before, header > .ribbon-outer::after {
   content: ' ';
   display: table; }
-header > .ribbon-outer:after {
+header > .ribbon-outer::after {
   clear: both; }
 
-/* content-based headers */
-#main_content h1, #main_content h2 {
-  /* badges */ }
-  #main_content h1 *, #main_content h2 * {
-    vertical-align: baseline; }
-  #main_content h1 img, #main_content h2 img {
-    border: 0;
-    box-shadow: none; }
+#main_content h1 *, #main_content h2 * {
+  vertical-align: baseline; }
+#main_content h1 img, #main_content h2 img {
+  border: 0;
+  box-shadow: none; }
 
 #main_content h1 {
   border-bottom: 0.2em double #cacacf;
   color: #03a;
   font-size: 1.85rem;
   line-height: 1.4;
-  margin: 1.1em 0 0.38em;
+  margin: 1.1em 0 .38em;
   padding-bottom: 0.6666rem;
   text-align: center; }
 #main_content h2 {
@@ -695,7 +697,7 @@ header > .ribbon-outer:after {
   color: #03a;
   font-size: 1.58rem;
   line-height: 1.4;
-  margin: 0.95em 0 0.5em;
+  margin: .95em 0 .5em;
   padding-bottom: 0.6666rem; }
 #main_content h3 {
   font-size: 1.45rem;
@@ -703,14 +705,14 @@ header > .ribbon-outer:after {
 #main_content h4 {
   color: #06d;
   font-size: 1.2rem;
-  margin: 0.6em 0; }
+  margin: .6em 0; }
 #main_content h5 {
   color: #8ac;
   font-size: 1rem;
-  margin: 0.7em 0; }
+  margin: .7em 0; }
 #main_content h6 {
-  font-size: 0.85rem;
-  margin: 0.8em 0; }
+  font-size: .85rem;
+  margin: .8em 0; }
 
 /*
 
@@ -1025,10 +1027,10 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
     color: #A31515; }
 
 @media print {
-  header > .ribbon-outer:before, header > .ribbon-outer:after {
+  header > .ribbon-outer::before, header > .ribbon-outer::after {
     content: ' ';
     display: table; }
-  header > .ribbon-outer:after {
+  header > .ribbon-outer::after {
     clear: both; }
 
   * {
