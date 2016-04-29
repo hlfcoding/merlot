@@ -10,4 +10,8 @@ ratings:
   paths:
   - "**.scss"
   - "**.coffee"
-exclude_paths: []
+exclude_paths:
+- "stylesheets/_reset.scss"
+- "**.css"
+- "stylesheets/content/_highlight-js.scss"
+- "stylesheets/content/_pygment.scss"
