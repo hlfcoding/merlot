@@ -16,12 +16,12 @@ $tablet-wrapper-width: 600px; // Nexus 7
 $desktop-wrapper-width: 800px;
 
 // spacing sizes
-$x-spacing-1: 0.6666rem;
+$x-spacing-1: .6666rem;
 $x-spacing-2: 1rem;
 $x-spacing-3: 1.3333rem;
-$x-spacing-thin-1: 0.3333rem;
+$x-spacing-thin-1: .3333rem;
 
-$y-spacing-1: 0.6666rem;
+$y-spacing-1: .6666rem;
 $y-spacing-2: 1rem;
 $y-spacing-3: 1.3333rem;
 
@@ -33,8 +33,9 @@ $font-family-2: 'Gentium Book Basic', Georgia, Times, 'Times New Roman', serif;
 $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', monospace;
 
 %clearfix {
-  &:before, &:after { content: ' '; display: table; }
-  &:after { clear: both; }
+  &::before,
+  &::after { content: ' '; display: table; }
+  &::after { clear: both; }
 }
 
 @mixin ribbon-tails($height, $width, $shadow-offset, $backface-hint-size,
@@ -45,28 +46,36 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
 {
   $color: darken($ribbon-color, 7%);
   $shadow-color: darken($color, 7%);
-  $x-offset: round($width * 0.55);
-  $y-offset: round($height * 0.35);
-  .left-tail, .right-tail {
+  $x-offset: round($width * .55);
+  $y-offset: round($height * .35);
+
+  .left-tail,
+  .right-tail {
+    height: $height;
     position: absolute;
     overflow: hidden;
-    width: $backface-hint-size; height: $height;
+    width: $backface-hint-size;
     z-index: 0;
     @if $from-angle == bottom {
       bottom: -$y-offset;
     } @else if $from-angle == top {
       top: -$y-offset;
     }
+
     > .tip {
       border: {
+        bottom-width: round($height / 2);
         color: transparent;
         style: outset solid; // fix for Firefox
-        top-width: round($height / 2); bottom-width: round($height / 2);
+        top-width: round($height / 2);
       }
-      position: absolute; top: 0; left: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
     }
-    /* backface depth hint */
-    &:after {
+
+    // backface depth hint
+    &::after {
       $size: $backface-hint-size;
       border: {
         color: $shadow-color;
@@ -75,8 +84,9 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
       }
       content: ' ';
       display: block;
+      height: 0;
       position: absolute;
-      width: 0; height: 0;
+      width: 0;
       @if $from-angle == bottom {
         border-bottom-color: transparent;
         top: $backface-hint-y-offset;
@@ -86,74 +96,91 @@ $font-family-3: 'Inconsolata', 'Lucida Console', 'Bitstream Vera Sans Mono', mon
       }
     }
   }
+
   .left-tail {
     left: 0;
+
     > .tip {
       border: {
         left-width: round($width / 3);
         right-width: round($width * 2 / 3);
       }
     }
-    /* backface depth hint */
-    &:after {
+
+    // backface depth hint
+    &::after {
       border-left-color: transparent;
     }
   }
+
   .right-tail {
     right: 0;
+
     > .tip {
       border: {
         left-width: round($width * 2 / 3);
         right-width: round($width / 3);
       }
     }
-    /* backface depth hint */
-    &:after {
+
+    // backface depth hint
+    &::after {
       border-right-color: transparent;
     }
   }
+
   @include non-mobile {
-    .left-tail, .right-tail {
+    .left-tail,
+    .right-tail {
       overflow: visible;
       width: $width;
+
       > .tip {      
         background: {
-          color: $color;
           clip: border-box; // be explicit
+          color: $color;
         }
         box-shadow: 0 $shadow-offset 0 $canvas-color-dark-2;
+
         &.animating {
           animation: {
+            duration: .5s;
             name: tail-bounce;
-            duration: 0.5s;
             timing-function: linear;
           }
         }
       }
     }
+
     .left-tail {
       left: -$x-offset;
+
       .tip {
         border-left-color: $bg-color;
+
         &.animating {
           transform-origin: right center;
         }
       }
-      /* backface depth hint */
-      &:after {
+      // backface depth hint
+      &::after {
         left: $backface-hint-x-offset;
       }
     }
+
     .right-tail {
       right: -$x-offset;
+
       .tip {
         border-right-color: $bg-color;
+
         &.animating {
           transform-origin: left center;
         }
       }
-      /* backface depth hint */
-      &:after {
+
+      // backface depth hint
+      &::after {
         right: $backface-hint-x-offset;
       }
     }

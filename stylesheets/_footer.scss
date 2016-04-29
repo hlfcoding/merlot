@@ -1,6 +1,6 @@
 @import 'shared';
 
-/* footer */
+// footer
 
 $shadow-offset: 2px;
 $ribbon-gutter-width: 114px;
@@ -15,10 +15,12 @@ footer {
   position: relative;
   text-align: center;
   z-index: 5;
+
   .ribbon-outer {
     border-bottom: $shadow-offset solid $canvas-color-dark-2;
     position: relative;
   }
+
   .ribbon-inner {
     $inner-border-width: 1px;
     $inner-border-margin: 2px;
@@ -30,40 +32,47 @@ footer {
     position: relative;
     z-index: 1;
   }
+
   p {
     color: $accent-color-2-light-3;
     font: 700 0.8em $font-family-1;
     padding: { left: $x-spacing-2; right: $x-spacing-2; }
   }
+
   > p {
-    margin: { top: $y-spacing-3; bottom: $y-spacing-3; }
+    margin: { bottom: $y-spacing-3; top: $y-spacing-3; }
   }
+
   .ribbon-inner p {
     color: $accent-color-1-light-2;
     font: italic #{$full-font-size}/1 $font-family-2;
     margin: 0;
-    padding: { top: 3px; bottom: 4px; }
+    padding: { bottom: 4px; top: 3px; }
   }
+
   a {
     color: $accent-color-1-light-1;
   }
+
   .ribbon-inner a {
     bottom: -1px;
     color: $accent-color-2-light-2;
     font: normal 800 round(0.9 * $full-font-size) $font-family-1;
     position: relative;
     text-transform: uppercase;
+
     &:hover {
       color: $accent-color-2-light-2;
     }
   }
+
   .octocat {
     $size: 30px;
     background: url(../images/octocat.png) no-repeat;
     background-size: cover;
-    width: $size;
     height: $size;
     margin: 0 auto;
+    width: $size;
   }
 }
 

@@ -1,6 +1,6 @@
 @import 'shared';
 
-/* wrapper */
+// wrapper
 
 body {
   background-color: $canvas-color;
@@ -19,10 +19,14 @@ a#forkme_banner {
   $size: 138px;
   background: transparent url(../images/fork-sprite.png) 0 0 no-repeat;
   display: block;
-  position: absolute; top: 0; left: 0;
+  height: $size;
+  left: 0;
+  position: absolute;
   text-indent: -9000px;  
-  width: $size; height: $size;
+  top: 0;
+  width: $size;
   z-index: 4;
+
   &:hover {
     background-position: 0 (-$size);
   }

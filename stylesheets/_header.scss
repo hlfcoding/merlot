@@ -1,6 +1,6 @@
 @import 'shared';
 
-/* header */
+// header
 
 $shadow-offset: 5px;
 $ribbon-gutter-width: 70px;
@@ -25,26 +25,34 @@ $content-phone-width: $phone-wrapper-width - $content-gutter-width-no-ribbon;
 $content-pod-width: $pod-wrapper-width - $content-gutter-width-no-ribbon;
 
 %downloads-tail-tip {
-  position: absolute;
-  left: 0; right: 0; margin: { left: auto; right: auto; }
-  width: 0; height: 0;
   border: { color: transparent; style: solid; }
+  height: 0;
+  left: 0;
+  margin: { left: auto; right: auto; }
+  position: absolute;
+  right: 0;
+  width: 0;
+
   @include desktop {
     $width: $downloads-desktop-width / 2;
     border: { left-width: $width; right-width: $width; }
   }
+
   @include tablet {
     $width: $downloads-tablet-width / 2;
     border: { left-width: $width; right-width: $width; }
   }
+
   @include phablet {
     $width: $downloads-phablet-width / 2;
     border: { left-width: $width; right-width: $width; }
   }
+
   @include phone {
     $width: $downloads-phone-width / 2;
     border: { left-width: $width; right-width: $width; }
   }
+
   @include pod {
     $width: $downloads-pod-width / 2;
     border: { left-width: $width; right-width: $width; }
@@ -60,9 +68,11 @@ header {
   text-align: center;
   top: 3rem;
   z-index: 3;
+
   > .ribbon-outer {
     @extend %clearfix;
   }
+
   .ribbon-inner {
     $inner-border-width: 2px;
     $inner-border-margin: 4px;
@@ -95,34 +105,39 @@ section#downloads {
   $tail-height: 30px;
   $tail-pull: $shadow-offset - $tail-height;
   background: $shadow-color;
-  margin: { top: -5.6666rem; bottom: $y-spacing-1; } // magic
+  margin: { bottom: $y-spacing-1; top: -5.6666rem; } // magic
   @include mobile { margin-top: -6rem; }
   padding-bottom: $shadow-offset;
   position: relative;
   text-align: center;
   z-index: 2;
+
   .tip {
     @extend %downloads-tail-tip;
     border-style: outset; // fix for Firefox
     border-top: { style: solid; width: $tail-height; }
   }
+
   > .inner {
     $bg-color: $accent-color-2-light-1;
     $line-color: $accent-color-2-light-2;
     background-color: $bg-color;
     padding-bottom: $y-spacing-1;
+
     > .tip {
-      bottom: $tail-pull;
       border-top-color: $bg-color;
+      bottom: $tail-pull;
       z-index: -1;
     }
   }
+
   > .tip {
-    /* shadow */
-    bottom: $tail-pull - $shadow-offset;
+    // shadow
     border-top-color: $shadow-color;
+    bottom: $tail-pull - $shadow-offset;
     z-index: -2;
   }
+
   a {
     $color: $accent-color-2-light-4;
     color: $color;
@@ -132,18 +147,21 @@ section#downloads {
     padding-top: 9.6666rem; // magic
     @include mobile { padding-top: 10rem; }
     width: 50%;
+
     &:focus {
       outline: none;
     }
+
     &:hover {
-      color: lighten($color, 10%);
       background-image: linear-gradient(to bottom, $accent-color-2-dark-1, $accent-color-2-light-1);
+      color: lighten($color, 10%);
       text-decoration: none;
     }
+
     em {
       display: block;
       font: italic #{$full-font-size}/1 #{$font-family-2};
-      margin-bottom: 0.3333em;
+      margin-bottom: .3333em;
     }
   }
 }
@@ -158,7 +176,7 @@ section#main_content {
   );
   box-shadow: 0 0 0 2px $canvas-color-dark-1;
   box-sizing: border-box;
-  margin: { top: -$top-pull-offset; bottom: -$bottom-pull-offset; }
+  margin: { bottom: -$bottom-pull-offset; top: -$top-pull-offset; }
   min-height: 12.3333rem;
   padding: ($top-pull-offset + $y-spacing-1) $x-spacing-2 ($bottom-pull-offset - 3rem);
   position: relative;
@@ -181,9 +199,11 @@ section#main_content {
   header {
     width: $tablet-wrapper-width - $ribbon-gutter-width;
   }
+
   section#downloads {
     width: $downloads-tablet-width;
   }
+
   section#main_content {
     width: $content-tablet-width;
   }
@@ -193,9 +213,11 @@ section#main_content {
   header {
     width: $phablet-wrapper-width;
   }
+
   section#downloads {
     width: $downloads-phablet-width;
   }
+
   section#main_content {
     width: $content-phablet-width;
   }
@@ -205,9 +227,11 @@ section#main_content {
   header {
     width: $phone-wrapper-width;
   }
+
   section#downloads {
     width: $downloads-phone-width;
   }
+
   section#main_content {
     width: $content-phone-width;
   }
@@ -217,9 +241,11 @@ section#main_content {
   header {
     width: $pod-wrapper-width;
   }
+
   section#downloads {
     width: $downloads-pod-width;
   }
+
   section#main_content {
     width: $content-pod-width;
   }

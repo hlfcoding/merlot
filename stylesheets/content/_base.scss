@@ -1,13 +1,13 @@
 @import '../shared';
 
 // lines, shadows
-$shadow-color: rgba($canvas-color-dark-1, 0.5);
+$shadow-color: rgba($canvas-color-dark-1, .5);
 $line-weight: 2px;
 $line-color: $shadow-color;
-$framed-box-shadow: 0 0 0 1px rgba($canvas-color-light-2, 0.8),
+$framed-box-shadow: 0 0 0 1px rgba($canvas-color-light-2, .8),
                     inset 0 0 0 $line-weight $shadow-color;
 
-/* base content */
+// base content
 
 html {
   font: normal normal #{$full-font-size}/#{$base-line-height} #{$font-family-1};
@@ -20,15 +20,23 @@ body {
 
 a {
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
-  &, &:hover {
+
+  &,
+  &:hover {
     color: $accent-color-2;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font: { family: $font-family-1; weight: 700; }
 }
 
@@ -49,18 +57,20 @@ ol {
   margin: $y-spacing-1 0;
   padding-left: $x-spacing-3;
 }
+
 ul {
   margin: $y-spacing-1 0;
+
   li {
-    background: transparent url(../images/chevron.png) 3px 6px no-repeat;
+    background: transparent url('../images/chevron.png') 3px 6px no-repeat;
     background-size: 7px 9px;
     padding-left: $x-spacing-3;
   }
 }
 
 blockquote {
-  background: transparent url(../images/blockquote-gfx.png) 0 4px no-repeat;
-  background-size: 1.1333rem 0.8666rem;
+  background: transparent url('../images/blockquote-gfx.png') 0 4px no-repeat;
+  background-size: 1.1333rem .8666rem;
   color: $canvas-color-dark-3;
   font-family: $font-family-1;
   margin: $y-spacing-3 0;
@@ -75,7 +85,7 @@ img {
 
 hr {
   $height: 18px;
-  background: transparent url(../images/hr.png) center repeat-x;
+  background: transparent url('../images/hr.png') center repeat-x;
   background-size: auto $height;
   border: 0;
   height: $height;
@@ -83,21 +93,25 @@ hr {
   outline: none;
 }
 
-code, pre {
-  font: normal normal #{$full-font-size-monospace}/#{$base-line-height + 0.2} #{$font-family-3};
+
+code,
+pre {
+  font: normal normal #{$full-font-size-monospace}/#{$base-line-height + .2} #{$font-family-3};
 }
+
 code {
   background: $canvas-color-light-1;
   border-radius: 2px;
   box-shadow: 0 0 0 1px $shadow-color;
   padding: 1px $x-spacing-thin-1;
-  /* reset */
+  // reset
   pre & {
     background: transparent;
     box-shadow: none;
     padding: 0;
   }
 }
+
 pre {
   background: $canvas-color-light-1;
   box-shadow: $framed-box-shadow;
@@ -107,19 +121,23 @@ pre {
   padding: 1em;
 }
 
+
 table {
   border: {
-    top: $line-weight solid $line-color;
     collapse: separate;
+    top: $line-weight solid $line-color;
   }
   display: table;
   margin: $y-spacing-1 0;
   width: 100%;
 }
+
 tr {
   display: table-row;
 }
-th, td {
+
+th,
+td {
   border: {
     color: $line-color;
     style: solid;
@@ -129,49 +147,63 @@ th, td {
   line-height: 1.5rem;
   padding: $x-spacing-thin-1 $x-spacing-1;
 }
+
+
 th {
   color: $accent-color-1-light-1;
-  font: { family: $font-family-1; size: 0.85em; weight: 700; }
+  font: { family: $font-family-1; size: .85em; weight: 700; }
 }
-td:last-child, th:last-child {
-  border-right: none;
+
+td:last-child,
+th:last-child {
+  border-right: 0;
 }
+
 table > tr:last-child {
-  th, td {
-    border-bottom: none;
+  th,
+  td {
+    border-bottom: 0;
   }
 }
 
 dl {
   margin: $y-spacing-1 0 $y-spacing-3;
 }
+
 dt {
   font: { family: $font-family-1; weight: 700; }
 }
+
 dd {
   padding-left: $x-spacing-3;
+
+  p:first-child {
+    margin-top: 0;
+  }
 }
-dd p:first-child {
-  margin-top: 0;
-}
+
 
 @include mobile {
   html {
     font-size: $mobile-font-size;
   }
-  code, pre {
+
+  code,
+  pre {
     font-size: $mobile-font-size-monospace;
   }
 }
 
 @include retina {
   ul li {
-    background-image: url(../images/chevron-2x.png);
+    background-image: url('../images/chevron-2x.png');
   }
+
   blockquote {
-    background-image: url(../images/blockquote-gfx-2x.png);
+    background-image: url('../images/blockquote-gfx-2x.png');
   }
+
   hr {
-    background-image: url(../images/hr-2x.png);
+    background-image: url('../images/hr-2x.png');
   }
 }
